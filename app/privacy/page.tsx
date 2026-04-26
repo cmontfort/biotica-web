@@ -67,7 +67,6 @@ export default function Privacy() {
         <li><strong>Oura Ring</strong> — sleep, HRV, and readiness data via Oura Cloud API. Governed by <a href="https://ouraring.com/privacy-policy" target="_blank" rel="noopener noreferrer">Oura&apos;s Privacy Policy</a>.</li>
         <li><strong>Withings</strong> — body composition data via Withings Health API. Governed by <a href="https://www.withings.com/us/en/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Withings&apos; Privacy Policy</a>.</li>
         <li><strong>Android Health Connect</strong> — steps and activity data stored locally on your Android device. No data is sent to Google through Biotica.</li>
-        <li><strong>Garmin and MyFitnessPal</strong> — integrations are in development and not currently active.</li>
       </ul>
       <p>We also use the following infrastructure providers:</p>
       <ul>

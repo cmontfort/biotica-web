@@ -71,11 +71,11 @@ export default function Terms() {
 
       <h2>7. Third-Party Integrations</h2>
       <p>
-        Biotica integrates with third-party services including Oura Ring, Withings, Android Health Connect,
-        Garmin, and MyFitnessPal (collectively, &quot;Third-Party Services&quot;). Your use of these services is
-        governed by their respective terms and privacy policies. Biotica is not responsible for the
-        availability, accuracy, or practices of Third-Party Services. You authorize Biotica to access and
-        retrieve data from Third-Party Services on your behalf as needed to provide the features you enable.
+        Biotica integrates with third-party services including Oura Ring, Withings, and Android Health Connect
+        (collectively, &quot;Third-Party Services&quot;). Your use of these services is governed by their respective
+        terms and privacy policies. Biotica is not responsible for the availability, accuracy, or practices of
+        Third-Party Services. You authorize Biotica to access and retrieve data from Third-Party Services on
+        your behalf as needed to provide the features you enable.
       </p>
 
       <h2>8. User Data and Privacy</h2>
