@@ -163,7 +163,13 @@ export default function Terms() {
       <h2>17. Contact</h2>
       <p>
         Questions about these Terms? Contact us at{' '}
-        <a href="mailto:legal@biotica.app">legal@biotica.app</a>.
+        <a href="mailto:legal@biotica.app">legal@biotica.app</a>, or by mail:
+      </p>
+      <p>
+        Biotica LLC<br />
+        82 Wendell Ave, Ste 100<br />
+        Pittsfield, MA 01201<br />
+        United States
       </p>
     </article>
   );

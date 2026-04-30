@@ -144,7 +144,13 @@ export default function Privacy() {
       <h2>10. Contact</h2>
       <p>
         Questions, concerns, or requests related to your privacy? Contact us at{' '}
-        <a href="mailto:privacy@biotica.app">privacy@biotica.app</a>.
+        <a href="mailto:privacy@biotica.app">privacy@biotica.app</a>, or by mail:
+      </p>
+      <p>
+        Biotica LLC<br />
+        82 Wendell Ave, Ste 100<br />
+        Pittsfield, MA 01201<br />
+        United States
       </p>
     </article>
   );
