@@ -8,12 +8,13 @@ export default function Privacy() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-20 prose prose-invert prose-zinc">
       <h1>Privacy Policy</h1>
-      <p className="text-muted-fg text-sm">Last updated: April 22, 2026</p>
+      <p className="text-muted-fg text-sm">Last updated: April 30, 2026</p>
 
       <p>
-        Biotica (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting your privacy. This Privacy Policy
-        explains what information we collect, how we use it, and your choices. By using Biotica, you agree
-        to this policy.
+        Biotica LLC, a Massachusetts limited liability company (&quot;Biotica,&quot; &quot;we,&quot; &quot;us,&quot; or
+        &quot;our&quot;), is committed to protecting your privacy. This Privacy Policy explains what
+        information we collect, how we use it, and your choices. By using Biotica, you agree to this
+        policy.
       </p>
 
       <h2>1. Information We Collect</h2>

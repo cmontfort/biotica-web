@@ -8,14 +8,15 @@ export default function Terms() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-20 prose prose-invert prose-zinc">
       <h1>Terms of Service</h1>
-      <p className="text-muted-fg text-sm">Last updated: April 22, 2026</p>
+      <p className="text-muted-fg text-sm">Last updated: April 30, 2026</p>
 
       <h2>1. Acceptance of Terms</h2>
       <p>
         By downloading, installing, or using the Biotica mobile application (&quot;App&quot;) or visiting biotica.app
         (&quot;Website&quot;), you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you do not agree to
-        these Terms, do not use Biotica. These Terms constitute a binding legal agreement between you and Biotica
-        (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;).
+        these Terms, do not use Biotica. These Terms constitute a binding legal agreement between you and
+        Biotica LLC, a Massachusetts limited liability company (&quot;Biotica,&quot; &quot;we,&quot; &quot;us,&quot; or
+        &quot;our&quot;).
       </p>
 
       <h2>2. Description of Service</h2>
