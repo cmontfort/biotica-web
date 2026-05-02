@@ -42,6 +42,7 @@ Workflow:
 5. **Knowledge base** — upload these files from this directory:
    - `biotica-brand.md` — audience, voice, vocabulary, product, legal rails
    - `voice-examples.md` — sample posts across channels and formats
+   - `roadmap.md` — what shipped recently, what's coming, what's retired, what's confidential. Re-upload this one whenever it changes (target: weekly + on any feature ship).
 
 6. **Pin to sidebar** so it's one click from claude.ai home.
 
