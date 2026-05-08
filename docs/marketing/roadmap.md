@@ -7,7 +7,7 @@ Not the same as the engineering backlog (which lives in `~/.claude/projects/-Use
 moves between sections below.** Then re-upload to the Claude.ai marketing project
 (Knowledge → replace `roadmap.md`).
 
-Last synced: 2026-05-02
+Last synced: 2026-05-08
 
 ---
 
@@ -18,18 +18,27 @@ build-log thread.
 
 | Date | Feature | One-line |
 |---|---|---|
+| 2026-05-08 | **Activation funnel sign-up fix** | Email confirmation interstitial after signup so new accounts no longer land on a session-less screen. Users see "Check your inbox" with a working resend button. |
+| 2026-05-08 | Dashboard agenda historical adherence | Scroll the dashboard back to any past date and the supplements row stays visible with that day's "X of Y taken" count. Was hidden before. |
+| 2026-05-07 | Email auth fully wired (SPF + DKIM + SMTP) | Workspace SMTP relay sends auth emails authenticated by SPF + DKIM. No more "this message isn't authenticated" warnings in Gmail. Branded HTML on every signup, reset, magic link, change email, and invite. |
+| 2026-05-07 | **DUNS landed** | Apple Developer Program enrollment cleared on Biotica LLC's side. iOS launch path now fully unblocked at the entity level. |
+| 2026-05-07 | RevenueCat → DB tier sync webhook | Paying subscribers' tier flips in the database within seconds of purchase. Was a stub before. |
+| 2026-05-07 | iOS RevenueCat init + per-platform key | iOS purchases route through a real configured SDK, not a hard-skip. Per-platform key selection lets the iOS App Store products and Android Play Store products use distinct keys against the same RC project. |
+| 2026-05-07 | Annual pricing locked at 18% off | Pro $127.99/yr (vs $12.99/mo × 12 = $155.88). Elite $295.99/yr (vs $29.99/mo × 12 = $359.88). Both round to a clean 18% savings claim. |
+| 2026-05-07 | Notification action buttons + cold-start drain | "Mark all taken" and "Snooze" now work even when the lock-screen notification fires while the app is killed. Cold-start drain handles the queued response on app re-open. |
+| 2026-05-06 | **WS3.1 Supplements rewrite** | Regimens with time bands. Drag-reorder. Batch logging. Library autocomplete with pre-filled delivery method. Per-schedule day-of-week filter. Dupe merge. Category pills. Compliance grid in the detail screen. The whole module rebuilt around how serious supplement protocols are actually run. |
+| 2026-05-05 | **Workout module — Coach-Forward Hybrid** | Full rebuild. Coach-narrated preview screen, batched active session, rest-focus state with a circular timer, post-session celebration with PR badges and estimated-vs-actual time pills. Plus a freeform mode that pulls in previous-session data on add. |
+| 2026-05-04 | Pre-APK bug cluster | Onboarding regimens walkthrough, per-card dashboard sync, Help/FAQ surface, dashboard pull-to-refresh and auto-refresh on sync completion, plus a handful of edge-cases caught during the first APK pass. |
+| 2026-05-04 | **Self-service account deletion** | Settings → Delete Account → cascade. Required for App Store / Play Store compliance and useful for testing. |
 | 2026-05-02 | **WS4 — AI Workout Programming** | Claude generates training programs that adapt to your readiness, phase, and equipment. 250+ tests, three edge functions. |
-| 2026-04-29 | Auth email pipeline | Workspace SMTP + 5 branded templates. Real users now get branded HTML from `noreply@biotica.app`. |
-| 2026-04-29 | Coach quota counter persistence | Quota badge shows used/remaining + reset date on every focus, not just after asking. |
+| 2026-04-29 | Auth email pipeline (initial) | Workspace SMTP and 5 branded templates. (Fully authenticated end-to-end via SPF + DKIM as of 2026-05-07.) |
 | 2026-04-29 | **Biotica LLC formed** | MA single-member LLC, EIN on file. Unblocks app-store enrollment, Junction labs, Stripe live, Whoop/Strava commercial APIs. |
-| 2026-04-26 | **WS3 — Supplement Tracking** | Log your stack, time doses around training, surface Rx warnings, feed adherence to the coach. |
-| 2026-04-25 | **WS2 — AI Coaching Q&A** | Ask the coach anything. Free 5/wk, Pro 30/wk, Elite unlimited. Grounded in your Oura + Withings + nutrition data. |
-| 2026-04-25 | Lean Body Mass on body card + trend page | LBM is the load-bearing metric in a building phase. Total weight is noisy. |
+| 2026-04-26 | **WS3 — Supplement Tracking** (initial) | Log your stack, time doses around training, surface Rx warnings, feed adherence to the coach. (Fully rebuilt as WS3.1 on 2026-05-06.) |
+| 2026-04-25 | **WS2 — AI Coaching Q&A** | Ask the coach anything. Free 5/wk, Pro 30/wk, Elite unlimited. Grounded in your Oura and Withings and nutrition data. |
+| 2026-04-25 | Lean Body Mass on body card and trend page | LBM is the load-bearing metric in a building phase. Total weight is noisy. |
 | 2026-04-25 | Weight trend page | 7D / 30D / 6MO / 1Y charts with phase-aware summary, hover tooltip, monthly x-axis labels. |
-| 2026-04-25 | Step goal tiering (Free, user-editable) | Free users set their own daily target. Pro/Elite half pending coach pipeline. |
-| 2026-04-25 | Dashboard history | Scroll back through previous days via DateNavigator. Lookback floor = your account creation date. |
-| 2026-04-25 | Manual weigh-in + back-fill | Bottom sheet to log weight + body fat for any past day. |
-| 2026-04-25 | Branding pass | Themed 404, branded favicon, PWA install icons, Biotica title. |
+
+(Earlier items — step goal tiering, manual weigh-in, branding pass — rolled off the 30-day window since they're now older than 30 days. They live in the engineering memory if needed.)
 
 ---
 
@@ -38,10 +47,12 @@ build-log thread.
 These exist publicly only insofar as the broader narrative includes them.
 Don't pre-announce dates.
 
-- **Apple Developer enrollment + DUNS** — gated on Robinhood OBA L1+L2 sign-off. Critical-path long-pole for iOS launch.
-- **Stripe production billing** — gated on the same OBA approval.
-- **Trademark application (USPTO Class 9 + 42)** — Gerben drafted, USPTO submission held pending OBA.
-- **Photos card hookup** — placeholder card on dashboard already shipped; storage + AI-vision pipeline is WS9 spec stage.
+- **Apple Developer Org enrollment** — fully unblocked as of 2026-05-07 (OBA cleared 2026-05-03 + DUNS landed 2026-05-07). Awaiting Apple ID creation + Apple's verification cycle (2-5 BD).
+- **Trademark application (USPTO Class 9 + 42)** — Gerben drafted; submission actionable now (was held pending OBA, now cleared). Awaiting Gerben checkpoint.
+- **WS5 paywall completion** — code complete on both platforms; user-side dashboard config and sandbox-purchase smoke remain. Closes when those land.
+- **WS6 native nutrition tracker** — replaces dead MFP. Cut from V1.0 launch scope to V1.0.1 to keep the launch date.
+- **WS7 weekly AI brief backend** — Pro-tier feature; UI shipped, backend pending.
+- **Photos card hookup** — placeholder card on dashboard already shipped; storage and AI-vision pipeline is WS9 spec stage.
 
 ---
 
@@ -51,13 +62,14 @@ Fair game for "coming soon" posts, waitlist drives, build-in-public threads.
 Use the SOON badge logic from Features.tsx — concrete enough to mention,
 not so committed that a slip kills credibility.
 
-- **🧪 Junction lab integration (Labs tab)** — at-home blood panels, results
-  auto-import, AI coach reads biomarkers in context. Pro perk: 6 months of Pro per panel (proposed v1, A/B test queued).
+- **🧪 Junction lab integration (Labs tab)** — at-home blood panels, results auto-import, AI coach reads biomarkers in context. Soften any specific timing claim to "coming" until the Junction sandbox + B2B contract land.
 - **Apple Health integration (iOS)** — counterpart to Health Connect; aggregates Garmin / Whoop / Strava / Peloton via HealthKit.
+- **iOS launch** — coming. (Specific dates remain internal; do not reference T-X countdowns or "shipping next week" language until the public-date flag flips. See "Internal — never publish" below.)
 - **Whoop integration** — direct OAuth pull of recovery, strain, sleep, HRV.
 - **Strava integration** — cardio activity logs (runs, rides, swims).
+- **WS6 native nutrition tracker** — built-in food logging that replaces the dead MFP integration. V1.0.1 (post-launch) but teasable as "coming."
+- **WS7 weekly AI brief** — Pro-tier Sunday-night summary. Backend coming in Sprint 3.
 - **Notifications bell + center** — in-app announcement surface so feature launches reach users without email.
-- **iOS launch** — post-Apple-Developer enrollment.
 
 ---
 
@@ -67,7 +79,7 @@ Known on the roadmap. Don't tease — these don't have a near-term ship date and
 shouldn't anchor the audience's expectations.
 
 - Garmin integration (now unblocked by LLC, in queue behind Whoop/Strava)
-- MFP replacement (Cronometer / Nutritionix / first-party tracking)
+- WS8 server push notifications (cut from V1.0; local notifs already shipped)
 - Historical Withings/Oura backfill beyond the current 30-day cap
 - C-Corp flip (only if VC conversation triggers)
 
@@ -77,8 +89,9 @@ shouldn't anchor the audience's expectations.
 
 Features we removed or talked about that should NOT appear in marketing copy:
 
-- **MyFitnessPal integration** — removed. The MFP API is dead and Cloudflare blocks scraping. Replacement (WS6) is on the long-horizon backlog.
+- **MyFitnessPal integration** — removed. The MFP API is dead and Cloudflare blocks scraping. Replacement is **WS6 native nutrition tracker** (above), shipping V1.0.1.
 - **"Garmin coming soon" placeholder in settings** — removed. Garmin is real but on the long-horizon backlog; promoting it before there's a near-term ship date erodes trust.
+- **Stripe live activation as a launch milestone** — RevenueCat IAP is the launch path. Do NOT reference Stripe in launch copy at all. Stripe live is a post-launch convenience for web purchases, not a launch beat.
 
 ---
 
@@ -88,13 +101,16 @@ These exist in the engineering memory for a reason. They are not for marketing c
 under any circumstance:
 
 - Security audit findings (open items, severity counts, mitigations in flight)
-- Specific A/B test designs (variant arms, success metrics, decision rules)
+- Specific A/B test designs (variant arms, success metrics, decision rules) — Junction perk variants are the live example
 - Three-discipline rule for Supabase auth-lock workarounds (engineering hygiene, not user-facing)
-- Robinhood OBA disclosure status (employer-confidential)
+- Timestamptz / millisecond-precision auth-lockout post-mortems
+- Robinhood OBA disclosure status (employer-confidential — though OBA was cleared 2026-05-03, the disclosure flow itself remains private)
 - Subagent operational constraints (purely internal tooling)
 - Detailed tier-margin math (panel margins, Pro subsidy figures)
 - Vendor wholesale pricing (Junction, Anthropic API spend, Workspace cost)
 - Feature subscription counts before announcement (e.g. "X people are on the labs waitlist") — only post these once they're load-bearing for the launch story
+- **Internal launch dates pre-public-announcement.** The 2026-06-08 Android / 2026-06-29 iOS targets in `docs/launch/2026-05-07/launch-plan.md` are operating dates only. Do NOT reference them in any post, email, or external comm. No T-X countdowns. No "shipping next week" language. The public-date flag flips when Chris approves it for marketing — not before.
+- QA / pentest specifics — RLS coverage detail, OWASP findings, severity counts
 
 If a draft references any of these, push back on it. Don't ship.
 
@@ -111,6 +127,4 @@ gets cut):
 
 Cadence target: weekly minor sync, immediate sync on any feature ship.
 
-When Phase 2 (the `.claude/skills/marketing/` skill) lands, the skill can read
-`MEMORY.md` directly and this curated doc may become a slimmer "marketing
-positioning" overlay rather than a full roadmap restatement.
+The Phase-2 marketing agent (now live in the biotica repo at `.claude/agents/marketing.md`) reads this file directly and can propose updates via `mode=roadmap-resync`. The Claude.ai project sunsets over the next 30 days as the agent takes over the daily-use surface.
