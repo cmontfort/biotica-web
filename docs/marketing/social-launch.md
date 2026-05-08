@@ -4,7 +4,7 @@ Operational log tracking the work to spin up Biotica's social presence.
 Companion to `roadmap.md`, `voice-examples.md`, `biotica-brand.md` in the
 marketing project knowledge.
 
-Last updated: 2026-05-08
+Last updated: 2026-05-08 (evening — second IG ban confirmed)
 
 ---
 
@@ -13,13 +13,12 @@ Last updated: 2026-05-08
 | Channel | Status | Handle |
 |---|---|---|
 | X / Twitter | Profile set up, warm-up in progress | `@biotica_app` |
-| Instagram | First account disabled, second attempt pending | `biotica.app` (orig) / `biotica_app` (retry) |
+| Instagram | 🚨 **BOTH attempts banned** — `biotica.app` (5/7) + `biotica_app` (5/8) | both burned |
 | LinkedIn | Not started | TBD |
-| Facebook Page | Not started (paused) | TBD |
+| Facebook Page | Not started — now critical-path for IG recovery | TBD |
 | Threads | Not started | TBD |
 
-Headline: X is the priority channel. IG is in recovery limbo.
-LinkedIn comes after X is rolling.
+Headline: X is the priority channel. **IG strategy needs a reset** — two consecutive automated bans rule out direct registration. Pivot to the Meta Business Suite path (Path 2 below) when ready. LinkedIn comes after X is rolling.
 
 ---
 
@@ -52,8 +51,11 @@ Hardening checklist:
    without specifics.
 3. Submitted in-app appeal. Denied within ~25 minutes with a final-notice
    message ("you cannot request another review").
-4. Started a second attempt with handle `biotica_app` to match the X handle.
-   Outcome pending as of end of day May 8.
+4. Started a second attempt with handle `biotica_app` (May 8 morning) to
+   match the X handle.
+5. **Second account ALSO banned** (May 8 evening). Same automated-disable
+   pattern. Confirms direct-registration is not viable for this brand
+   on Meta's current heuristics.
 
 ### Why this happened (best guess)
 
@@ -67,15 +69,25 @@ when:
 This is almost certainly NOT something Chris actually did wrong. It's the
 algorithm being aggressive about brand-name handles on day-one accounts.
 
-### Recovery paths (if second attempt also fails)
+### Recovery paths (now active — second attempt also banned)
 
 1. Meta Verified Business ($21.99/mo) for direct human support
-2. Create FB Business Page from Chris's personal Facebook, register IG via
-   Meta Business Suite (accounts created through Business Manager flow rarely
-   get auto-flagged)
+2. **Create FB Business Page from Chris's personal Facebook, register IG via
+   Meta Business Suite** (accounts created through Business Manager flow rarely
+   get auto-flagged) — **recommended path**
 3. Wait ~30 days for handle to release, register fresh from a different device
 
-Decision: Pause on this until the second attempt's outcome is known.
+### Decision (pending — Chris call when refreshed)
+
+Both direct-registration attempts burned. Recommended path: **Path 2 (Meta Business Suite)**. Reasoning:
+- Cheapest ($0 vs Path 1's $22/mo)
+- Highest historical success rate for branded handles
+- Builds the FB Business Page anyway, which is required for Meta ads later
+- Side benefit: unblocks Threads (also through Meta Business Suite)
+
+Path timing: NOT urgent for V1.0 launch. X is the priority channel; IG is a "we should have it" but not launch-blocking. Schedule for when there's a clean 30-min focused block. Suggested: this week if energy permits, otherwise after Sprint 1 closes (2026-05-15).
+
+If Path 2 also fails: Path 1 (Meta Verified) is the escape hatch — pay the $22 for direct human support, escalate.
 
 ---
 
