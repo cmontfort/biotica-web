@@ -1,10 +1,70 @@
-# Biotica Marketing — Claude.ai Project Setup
+# Biotica Marketing — Knowledge Base
 
-These docs are the knowledge base for a **Claude.ai Project** that drafts marketing
+> **🟣 Phase-1 (Claude.ai project) retired 2026-05-08.** The marketing agent now lives at `~/projects/biotica/.claude/agents/marketing.md` and reads these knowledge files directly per run. There is no longer a separate Claude.ai project to keep in sync.
+>
+> If you previously had a `Biotica Marketing` project on claude.ai, **delete it** to consolidate the source of truth. Then invoke marketing work through Claude Code in the biotica repo (e.g. "marketing — draft 3 tweets about X").
+>
+> The original Phase-1 setup instructions are preserved at the bottom of this file for historical reference and in case the agent ever needs to be re-platformed.
+
+---
+
+## How marketing actually works now (Phase 2 — current)
+
+Four files in this directory form the agent's knowledge base. The agent reads them on every run; no upload step is required.
+
+| File | What it is | Who edits it |
+|---|---|---|
+| `biotica-brand.md` | Voice rules, audience, banned words, vocabulary, channel notes, product cheat sheet, tier pricing | Chris (with agent proposing updates after 3+ rejection patterns) |
+| `voice-examples.md` | Sample posts across channels showing cadence + structure to mimic | Chris (agent proposes additions) |
+| `roadmap.md` | Curated marketing-relevant slice of what's shipped, in flight, coming soon, retired, never-publish | Agent proposes via `mode=roadmap-resync`, Chris approves |
+| `social-launch.md` | Operational state per channel — X, IG, LinkedIn, Threads, FB Page | Agent updates per its standing commit auth on operational state changes; Chris reviews |
+
+## How to invoke the agent
+
+In Claude Code at the biotica repo, just talk to it:
+
+```
+"Marketing — draft 3 tweets announcing the workout module shipped"
+"Marketing — what should we post this week"
+"Marketing — re-sync the roadmap"
+"Marketing — voice spot-check this draft: <paste>"
+```
+
+The agent dispatches to the role doc at `.claude/agents/marketing.md` and runs in mode-aware fashion (draft / now-teasable / launch-sequence / roadmap-resync / weekly-review / daily-brief-snippet / voice-update-proposal).
+
+## Auto-triggers (no manual invocation)
+
+The agent fires automatically when:
+- A sprint closes with shipped features → `mode=now-teasable` surfaces what's post-fodder
+- A launch date locks → `mode=launch-sequence` drafts T-14 → T+7 calendar
+- The daily brief runs in launch window → "🟣 Marketing on deck" section auto-populates
+- `roadmap.md` is older than 14 days → `mode=roadmap-resync` proposes update
+
+## Compliance gates (auto-routed)
+
+Every draft passes through these BEFORE it surfaces:
+
+| Trigger | Routes to |
+|---|---|
+| Medical claim | `legal-ops` (disclaimer-audit) |
+| Unlaunched feature reference | `product-manager` (consult roadmap) |
+| Competitive claim | `legal-ops` |
+| Pricing reference | Cross-check `subscription_tiers.md` |
+| Store listing copy | `compliance-reviewer` |
+| Robinhood / employer reference | Self-block per OBA boundary |
+
+---
+
+## Phase-1 setup (RETIRED 2026-05-08 — preserved for reference only)
+
+<details>
+<summary>Click to expand the original Claude.ai project setup instructions.</summary>
+
+These docs were the knowledge base for a **Claude.ai Project** that drafted marketing
 content (tweets, threads, LinkedIn posts, email copy, ad variants, blog outlines)
-in Biotica's voice.
+in Biotica's voice. **This pattern was retired 2026-05-08** in favor of the in-repo agent — single source of truth, lockstep with the rest of the agent roster, and no manual re-upload cycle.
 
-## One-time setup (~10 min)
+### Original one-time setup (~10 min)
 
 1. Go to [claude.ai](https://claude.ai) → **Projects** → **Create Project**
 2. **Name:** `Biotica Marketing`
@@ -46,33 +106,21 @@ Workflow:
 
 6. **Pin to sidebar** so it's one click from claude.ai home.
 
-## Daily use
+### Why this was retired
 
-Open the project, ask things like:
-- "Draft 3 tweets announcing the Coach feature shipped to beta."
-- "Write a LinkedIn post about why I formed an LLC for a fitness app."
-- "Give me 5 hook variants for a thread about lab data + training."
-- "Rewrite this draft to sound less marketing-y: [paste]"
+Three structural limits the in-repo agent solves:
+- **No git context.** Phase-1 couldn't read commit history or `decisions/` to know what shipped. Knowledge drift required manual re-upload.
+- **No cross-agent comms.** Couldn't auto-route medical claims through `legal-ops` or consult `product-manager` on narrative.
+- **No proactive surfacing.** Required user to remember to ask "what should we post"; couldn't fire on sprint-close or launch-date-lock events.
 
-## Iterating on the voice
+The Phase-2 agent solves all three by living in the same Claude Code session as the rest of the roster.
 
-When Claude produces a post that doesn't sound right:
-1. Note WHAT specifically doesn't land (too corporate, too hype, wrong audience, etc.)
-2. Update `biotica-brand.md` voice section OR add a new entry to `voice-examples.md`
-3. Commit. Re-upload to the Claude.ai project (Knowledge → replace file).
+### To fully retire your Claude.ai project
 
-The goal is to converge on a voice document so good that any future contractor
-or freelance marketer could read it and write in-brand on day one.
+1. Open the `Biotica Marketing` project on claude.ai
+2. Project menu → **Delete project**
+3. Confirm
 
-## When to graduate
+The knowledge files in this directory remain — they're now the agent's source of truth, not a project upload target.
 
-This Claude.ai project is **Phase 1**. Move to Phase 2 (a `.claude/skills/marketing/`
-skill in the biotica or biotica-web repo) when:
-- You want the agent to read git log + memory backlog automatically to know what
-  shipped this week
-- You're drafting from terminal/Claude Code more than from claude.ai
-- The "what should we post about" decision is the bottleneck, not the drafting
-
-Move to Phase 3 (autonomous Vercel-cron agent) when daily posting cadence is
-more important than per-post craft. Don't graduate prematurely — bad autonomous
-posts compound much faster than good ones.
+</details>
