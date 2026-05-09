@@ -8,7 +8,7 @@ export default function Terms() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-20 prose prose-invert prose-zinc">
       <h1>Terms of Service</h1>
-      <p className="text-muted-fg text-sm">Last updated: April 30, 2026</p>
+      <p className="text-muted-fg text-sm">Last updated: May 9, 2026</p>
 
       <h2>1. Acceptance of Terms</h2>
       <p>
@@ -23,7 +23,7 @@ export default function Terms() {
       <p>
         Biotica is a personal health and fitness platform that aggregates biometric data from third-party wearable
         devices and health services, provides AI-powered workout programming, supplement tracking, and performance
-        coaching features. Biotica is currently available on Android and is not yet available on iOS.
+        coaching features. Biotica is currently available on Android. iOS availability is expected in mid-2026.
       </p>
 
       <h2>3. Eligibility</h2>
@@ -43,15 +43,29 @@ export default function Terms() {
 
       <h2>5. Subscriptions and Billing</h2>
       <p>
-        Biotica offers a free tier and paid subscription plans (&quot;Starter,&quot; &quot;Pro,&quot; and &quot;Elite&quot;). Paid
-        subscriptions are billed on a monthly recurring basis through the Google Play Store. All billing is
-        handled by our payment processor, RevenueCat, and Google Play. Prices are displayed in the App and
-        are subject to change with notice. Subscriptions automatically renew unless cancelled before the
-        renewal date. Refunds are subject to Google Play&apos;s refund policy.
+        Biotica offers a free tier and paid subscription plans (&quot;Pro&quot; and &quot;Elite&quot;). Paid
+        subscriptions are billed on a monthly or annual recurring basis through the platform through which
+        you purchased (Google Play Store for Android; Apple App Store for iOS). All billing is managed by
+        RevenueCat and the applicable platform. Prices are displayed at the time of purchase and are subject
+        to change with notice.
       </p>
       <p>
-        By subscribing, you authorize recurring charges to your Google Play payment method. You may cancel at
-        any time through the Google Play Store; cancellation takes effect at the end of the current billing period.
+        <strong>For subscriptions purchased through the Apple App Store:</strong> Payment will be charged to
+        your Apple Account at confirmation of purchase. Subscriptions automatically renew unless auto-renewal
+        is turned off at least 24 hours before the end of the current billing period. You can manage your
+        subscription and turn off auto-renewal at any time in your Apple Account Settings after purchase.
+        Refunds are subject to Apple&apos;s standard refund policy.
+      </p>
+      <p>
+        <strong>For subscriptions purchased through Google Play:</strong> Payment will be charged to your
+        Google Play payment method at confirmation of purchase. Subscriptions automatically renew unless
+        cancelled before the renewal date through the Google Play Store. Refunds are subject to Google
+        Play&apos;s refund policy.
+      </p>
+      <p>
+        By subscribing, you authorize recurring charges to your selected payment method. You may cancel at
+        any time through your device&apos;s platform subscription management; cancellation takes effect at
+        the end of the current billing period.
       </p>
 
       <h2>6. Health Information Disclaimer</h2>

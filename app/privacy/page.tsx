@@ -8,7 +8,7 @@ export default function Privacy() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-20 prose prose-invert prose-zinc">
       <h1>Privacy Policy</h1>
-      <p className="text-muted-fg text-sm">Last updated: April 30, 2026</p>
+      <p className="text-muted-fg text-sm">Last updated: May 9, 2026</p>
 
       <p>
         Biotica LLC, a Massachusetts limited liability company (&quot;Biotica,&quot; &quot;we,&quot; &quot;us,&quot; or
@@ -52,6 +52,7 @@ export default function Privacy() {
       <ul>
         <li>Provide and operate the Biotica service, including syncing your biometric data</li>
         <li>Generate personalized AI-powered workout programs and performance insights</li>
+        <li>Provide AI coaching responses — your biometric data is included in prompts sent to Anthropic&apos;s API. See Section 3 for detail on what is sent.</li>
         <li>Track your supplement protocol and correlate it with your biometric trends</li>
         <li>Send transactional emails (account verification, password reset)</li>
         <li>Improve and debug the App through aggregated, anonymized analytics</li>
@@ -73,7 +74,17 @@ export default function Privacy() {
       <ul>
         <li><strong>Supabase</strong> — database and authentication provider. Data is stored in US-based data centers. See <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">Supabase Privacy Policy</a>.</li>
         <li><strong>RevenueCat</strong> — subscription and billing management. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat Privacy Policy</a>.</li>
-        <li><strong>Anthropic (Claude API)</strong> — powers AI coaching features. Prompts include your biometric data. Anthropic does not use API data for model training. See <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer">Anthropic Privacy Policy</a>.</li>
+        <li>
+          <strong>Anthropic (Claude API)</strong> — powers AI coaching features. When you use the AI coach
+          (including the coaching Q&amp;A and AI workout programming), we send a prompt to Anthropic&apos;s API
+          that includes: your sleep score, HRV, readiness score, resting heart rate, body weight, body fat
+          percentage, lean mass, step count, active calories, supplement names and dosages, recent workout
+          history (exercises, sets, reps, weights), and your coaching question along with recent conversation
+          history. Anthropic processes this prompt and returns a response. Anthropic does not retain your
+          data for model training per their API Terms. AI coach outputs are stored in your Biotica account
+          as part of your coaching history. See{' '}
+          <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer">Anthropic Privacy Policy</a>.
+        </li>
       </ul>
 
       <h2>4. Data Storage and Security</h2>
@@ -115,7 +126,13 @@ export default function Privacy() {
       <h2>7. Your Rights and Choices</h2>
       <p>You have the right to:</p>
       <ul>
-        <li><strong>Access</strong> your personal data through the App (Settings → Export My Data)</li>
+        <li>
+          <strong>Access</strong> your account data from Biotica&apos;s systems — to request a copy, tap{' '}
+          <em>Settings → Export My Data</em> in the App, which opens a pre-filled email to{' '}
+          <a href="mailto:privacy@biotica.app">privacy@biotica.app</a>. We will fulfill your request by
+          email within 30 days. Subscription and purchase records held by Apple App Store, Google Play, or
+          RevenueCat are available directly from those services through your platform account settings.
+        </li>
         <li><strong>Correct</strong> inaccurate data through the App settings</li>
         <li><strong>Delete</strong> your account and all associated data (Settings → Delete Account)</li>
         <li><strong>Disconnect</strong> third-party integrations at any time (Settings → Connected Integrations)</li>
@@ -124,7 +141,8 @@ export default function Privacy() {
       <p>
         California residents have additional rights under the CCPA, including the right to know what personal
         information is collected, the right to delete, and the right to opt out of sale (we do not sell
-        personal information). To exercise these rights, contact us at privacy@biotica.app.
+        personal information). To exercise these rights, contact us at{' '}
+        <a href="mailto:privacy@biotica.app">privacy@biotica.app</a>.
       </p>
 
       <h2>8. Children&apos;s Privacy</h2>
