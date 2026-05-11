@@ -4,7 +4,7 @@ Operational log tracking the work to spin up Biotica's social presence.
 Companion to `roadmap.md`, `voice-examples.md`, `biotica-brand.md` in the
 marketing project knowledge.
 
-Last updated: 2026-05-08 (evening — second IG ban confirmed)
+Last updated: 2026-05-11 (May 10 post telemetry ingested; warm-up strategy updated)
 
 ---
 
@@ -12,13 +12,13 @@ Last updated: 2026-05-08 (evening — second IG ban confirmed)
 
 | Channel | Status | Handle |
 |---|---|---|
-| X / Twitter | Profile set up, warm-up in progress | `@biotica_app` |
-| Instagram | 🚨 **BOTH attempts banned** — `biotica.app` (5/7) + `biotica_app` (5/8) | both burned |
-| LinkedIn | Not started | TBD |
-| Facebook Page | Not started — now critical-path for IG recovery | TBD |
+| X / Twitter | Profile set up, warm-up in progress. First post live May 10. | `@biotica_app` |
+| Instagram | Both attempts banned — `biotica.app` (5/7) + `biotica_app` (5/8) | both burned |
+| LinkedIn | Chris's personal account posted May 10 (origin-story post) — 3,268 impressions, 69 reactions, 6 comments. Biotica brand page not yet created. | @chrismontfort (personal) |
+| Facebook Page | Not started — critical-path for IG recovery | TBD |
 | Threads | Not started | TBD |
 
-Headline: X is the priority channel. **IG strategy needs a reset** — two consecutive automated bans rule out direct registration. Pivot to the Meta Business Suite path (Path 2 below) when ready. LinkedIn comes after X is rolling.
+Headline: X is the priority channel for brand. LinkedIn personal (Chris's account) is producing real reach right now — 3,268 impressions on May 10 post. A Biotica company page on LinkedIn is worth setting up once X is rolling, but Chris's personal account is already a functioning marketing surface.
 
 ---
 
@@ -117,8 +117,8 @@ If Path 2 also fails: Path 1 (Meta Verified) is the escape hatch — pay the $22
 
 ### What's pending
 
-- Complete the last 2 follows (rate-limited on May 8)
-- Warm-up window before first post
+- Complete the last 2 follows (@misraetel, @function) — still pending as of May 11
+- See updated warm-up strategy below
 
 ---
 
@@ -128,15 +128,48 @@ The account hit the follow rate limit on May 8 evening, which means X is
 already paying close attention to it. Plan adjusted to be slightly more
 conservative than originally proposed.
 
-| Day | Action |
-|---|---|
-| May 9 | Finish last 2 follows (@misraetel, @function). Like 5-10 things on the timeline. NO POSTING. |
-| May 10 | First non-link tweet. Observation, opinion, or build-log note. Reply to 1-2 accounts you follow. |
-| May 11 | Second non-link tweet. Maybe another reply. Don't post the link yet. |
-| May 12 | Pinned tweet WITH link. Pin it. |
+### Original schedule (executed through May 10)
 
-Posting the link before day 4 risks tripping X's new-account spam filter.
-Suppressed tweet (no one sees it) or shadowban are the likely outcomes.
+| Day | Action | Result |
+|---|---|---|
+| May 9 | Finish last 2 follows (@misraetel, @function). Like 5-10 things. NO POSTING. | Rate-limit still in effect; follows not confirmed complete |
+| May 10 | First non-link tweet. Origin-story / coach problem-statement. | Posted. See telemetry below. |
+| May 11 | Second non-link tweet. Reply to 1-2 accounts. | Upcoming |
+| May 12 | Pinned tweet WITH link. Pin it. | Upcoming — status under review (see recommendation) |
+
+### May 10 post telemetry (actual numbers)
+
+Post: "I've logged 365+ workouts. Dropped over 45 lbs in 2 years..." (origin-story / coach problem-statement)
+
+| Metric | Value |
+|---|---|
+| Impressions | 4 |
+| Engagements | 2 |
+| Detail expands | 1 |
+| Profile visits | 1 |
+| Likes | 0 |
+| Reposts | 0 |
+| Replies | 0 |
+
+**Interpretation:** These are follower-only numbers. The account has no organic reach yet — 4 impressions means it surfaced to roughly 4 followers/connections and was algorithmically invisible outside that set. This is expected for a brand-new account with 0 followers posting into the void. It does NOT indicate a shadowban; a shadowban would show 0 impressions. These 4 are likely the accounts @biotica_app follows who saw it in their feed.
+
+**What the numbers do NOT tell us:** whether the warm-up is working (too early, 1 post, no followers). The warm-up's job is to establish account legitimacy before the link post, not to generate reach at this stage.
+
+### Strategy update (2026-05-11) — reply-first pivot
+
+See full analysis in social-launch.md strategic notes below. Bottom line: the path from "0 followers, cold account" to "launch-ready channel" on a 7-week timeline runs through replies, not broadcast posts. Shift the cadence to reply-heavy until there is a visible follower base, then layer in standalone posts.
+
+| Period | Priority action | Cadence |
+|---|---|---|
+| May 11 – May 18 | Replies on @PeterAttiaMD, @hubermanlab, @BioLayne, @JeffNippard threads | 3-5 substantive replies/day |
+| May 11 – May 18 | Build-in-public replies on @levelsio, @marc_louvion threads | 1-2/day |
+| May 12 | Pinned tweet with link (proceed per original plan) | 1 post |
+| May 12 – ongoing | Standalone posts: 3-4/week max | Short-form, build-log, data observations |
+| May 18 review | Check follower count and impression delta | Adjust cadence |
+
+Posting the link before day 4 (May 12) still holds — no change to that gate.
+
+**Do NOT boost the May 10 post.** $0 expected return at this follower count. Paid reach on a zero-follower account buys low-quality impressions from accounts that will never convert.
 
 ---
 
