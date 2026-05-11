@@ -4,7 +4,42 @@ Operational log tracking the work to spin up Biotica's social presence.
 Companion to `roadmap.md`, `voice-examples.md`, `biotica-brand.md` in the
 marketing project knowledge.
 
-Last updated: 2026-05-11 (May 10 post telemetry ingested; warm-up strategy updated)
+Last updated: 2026-05-11 (May 10 post telemetry ingested; warm-up strategy updated; waitlist conversion funnel diagnosis added)
+
+---
+
+## Waitlist conversion funnel diagnosis — 2026-05-11
+
+**Trigger:** LinkedIn post (May 10) — 3,268 impressions / 2,039 reached / 77 profile visits / 0 waitlist signups.
+
+### Layer-by-layer funnel audit
+
+| Layer | Finding | Severity |
+|---|---|---|
+| Post contained a CTA / link | No link, no CTA. Post ends "Building in public from here." — no URL, no "join the waitlist at biotica.app." | Root cause |
+| LinkedIn profile links to biotica.app | Unknown — not confirmed. 77 people visited Chris's profile and found no next step in the post itself. Whether the profile bio has a link is unverified. | Verify |
+| biotica.app landing page exists | Yes — Next.js app deployed at biotica.app. Hero has a "Join the Waitlist" CTA that anchors to a waitlist section. | OK |
+| Waitlist form functional | Partially. WaitlistForm posts to `/api/waitlist` which writes to Supabase `waitlist` table using `supabaseServer`. BUT: `.env.local` only has `SUPABASE_SERVICE_ROLE_KEY` and `NEXT_PUBLIC_SUPABASE_URL` — `NEXT_PUBLIC_SUPABASE_ANON_KEY` is MISSING from the env file. `supabase-server` may still work (uses service role), but this is an untested production path. | Verify |
+| Supabase `waitlist` table exists | Assumed yes — the route would 500 on every insert if it didn't, which would be a known breakage. Confirm by checking table count. | Verify |
+| Where Chris checks signups | No analytics instrumentation noted anywhere. "Doesnt look like we got any" implies Chris is eyeballing it, not querying a count. No email notification on signup. | Gap |
+
+### Root cause (confirmed)
+
+The LinkedIn post had no link and no CTA. The draft (`docs/marketing/2026-05-10/founder-origin-intro.md`) explicitly notes: "No biotica.app link in the thread — that goes in the May 12 pinned tweet per warm-up plan." That logic made sense for the X warm-up sequence (don't post links before day 4). It does NOT apply to LinkedIn, where the warm-up constraints don't exist and the audience is already warm.
+
+77 people read the post, wanted to know more, visited Chris's profile, and found no actionable next step in the post itself. Whether the profile bio has a link is the remaining unknown. If it does, some of those 77 should have converted — which would suggest the landing page or form has a problem. If it doesn't, the leak is entirely in the post + profile layer.
+
+### What to check (Chris hands-on items)
+
+1. Does Chris's LinkedIn profile bio contain a link to biotica.app? If not, add it — takes 2 min.
+2. Run this Supabase query to confirm the table exists and check signup count: `select count(*) from waitlist;`
+3. Confirm biotica.app is live and the form submits end-to-end. Test with a throwaway email. Watch for a 500 (missing anon key) vs a success state.
+
+### Fix for the next LinkedIn post
+
+Add a CTA line. LinkedIn warm-up constraints don't apply — link from day one. One line at the end: "Android beta coming. biotica.app — join the waitlist."
+
+This is not a copy problem. The post itself performed well (77 profile visits from a cold account is strong). The funnel just had no bottom.
 
 ---
 
