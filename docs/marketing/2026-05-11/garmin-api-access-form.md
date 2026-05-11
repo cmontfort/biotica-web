@@ -4,35 +4,33 @@ Generated: 2026-05-11
 
 ---
 
-## Track-fit call
+## Track-fit call (REVISED 2026-05-11 after Chris verified URLs in browser)
 
 **URL Chris pointed at:** https://www.garmin.com/en-US/health/solutions/gym-and-fitness/
 
-**Assessment: WRONG TRACK. Do not file under Gym and Fitness.**
+**Initial recommendation was WRONG.** Marketing agent recommended filing at https://www.garmin.com/en-US/forms/GarminConnectDeveloperAccess/ (the URL in the backlog memo). Chris verified directly in his browser: that URL has **no submission field** — it appears to be informational or deprecated. The only public-facing intake form Chris can reach is on the Gym and Fitness solutions page he originally pointed at.
 
-The Gym and Fitness solution is Garmin's B2B offering for gym operators and enterprise fitness businesses. It targets operators who want to deploy Garmin devices to their members or embed Garmin vitals dashboards into their gym management software. Biotica is a consumer app that pulls user-consented health data via OAuth. That is a completely different relationship.
+**Revised approach: file via the Gym and Fitness form anyway.** Garmin's intake is gated behind that form because the public-facing developer-program forms aren't reachable without an existing partner relationship. A human reviewer at Garmin will route the request internally once they see the use case is for a consumer app developer, not a gym operator. Filing through the wrong-track form with the right framing is dramatically better than not filing.
 
-**Correct entry point: Garmin Connect Developer Program**
+**Critical:** the use-case copy below now LEADS with an explicit "wrong track, please route" sentence so the reviewer immediately understands this isn't a gym/operator request.
 
-- Program page: https://developers.garmin.com/gc-developer-program/ (ECONNREFUSED on fetch — check browser directly)
-- Access request form: https://www.garmin.com/en-US/forms/GarminConnectDeveloperAccess/
-- This is the program the backlog memo already references. It provides API access to health and activity data for third-party apps via OAuth 2.0 PKCE, which is exactly what Biotica needs.
+**File the access request at:** https://www.garmin.com/en-US/health/solutions/gym-and-fitness/ — use the "Learn More" / contact form on that page.
 
-The Garmin developer landscape has two relevant programs:
+The Garmin developer landscape has these tracks (for reference, in case the form asks):
 
 | Program | What it is | Right for Biotica? |
 |---|---|---|
-| Garmin Connect Developer Program | OAuth pull of user health + activity data for consumer apps | YES |
+| Garmin Connect Developer Program | OAuth pull of user health + activity data for consumer apps | YES — this is what we want |
 | Garmin Health SDKs | BLE/SDK layer for controlling wearables directly from a native app | No — Biotica doesn't need device control |
-| Gym and Fitness (Garmin Health for Business) | Enterprise B2B deployment of Garmin devices in gym facilities | No |
-
-File the access request at: https://www.garmin.com/en-US/forms/GarminConnectDeveloperAccess/
+| Gym and Fitness (Garmin Health for Business) | Enterprise B2B deployment of Garmin devices in gym facilities | No — but it's the only public intake we can reach |
 
 ---
 
 ## Form field drafts
 
-### Use case (200-350 words)
+### Use case (250-400 words, REVISED 2026-05-11 to lead with wrong-track-routing)
+
+I'm submitting through this form because it's the only public-facing intake I can find. We're a consumer app developer, not a gym or fitness operator. If this form isn't the right intake for our request, please route us to the Garmin Connect Developer Program team — that's the program we're requesting access to.
 
 Biotica (biotica.app) is requesting read-only access to the Garmin Connect Developer Program to sync activity and wellness data for users who wear Garmin devices.
 
@@ -76,8 +74,9 @@ OAuth 2.0 PKCE. User authorizes in-app via a WebView or system browser redirect.
 
 ## Notes before Chris submits
 
-1. The correct form URL is https://www.garmin.com/en-US/forms/GarminConnectDeveloperAccess/ -- not the Gym and Fitness track.
+1. **Use the Gym and Fitness form** at https://www.garmin.com/en-US/health/solutions/gym-and-fitness/ — Chris verified 2026-05-11 that the GarminConnectDeveloperAccess URL has no submission field. The use-case copy now leads with an explicit wrong-track routing sentence so the human reviewer can re-route internally to the Connect Developer Program team.
 2. DUNS is confirmed (#145012120 per `backlog_legal_entity.md`). Have it ready if the form asks for it.
-3. Apple Developer and Google Play accounts are in flight -- the form may ask for app store URLs. The app is pre-launch, so note "launching June 2026" and provide biotica.app as the product URL.
-4. The beat-to-beat HRV enhancement carries a license fee per the backlog memo -- do not request it in V1. The daily HRV summary is sufficient.
+3. Apple Developer and Google Play accounts are in flight — the form may ask for app store URLs. The app is pre-launch, so note "launching June 2026" and provide biotica.app as the product URL. Google Play account cleared 2026-05-11; Apple Developer Org still pending (ETA 2026-05-13-15).
+4. The beat-to-beat HRV enhancement carries a license fee per the backlog memo — do not request it in V1. The daily HRV summary is sufficient.
 5. Garmin's stated turnaround is approximately 2 business days for an initial decision, then 1-4 weeks to integration. Filing now puts the integration squarely in the V1.1 window.
+6. If Garmin's first reply asks for additional materials (NDA, technical spec, etc.), legal-ops should be looped in for any contract / data-sharing terms review before signing.
