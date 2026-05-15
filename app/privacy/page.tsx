@@ -123,7 +123,7 @@ export default function Privacy() {
         retained indefinitely.
       </p>
 
-      <h2>7. Your Rights and Choices</h2>
+      <h2 id="data-deletion">7. Your Rights and Choices</h2>
       <p>You have the right to:</p>
       <ul>
         <li>
