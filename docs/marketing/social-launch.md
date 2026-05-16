@@ -4,7 +4,7 @@ Operational log tracking the work to spin up Biotica's social presence.
 Companion to `roadmap.md`, `voice-examples.md`, `biotica-brand.md` in the
 marketing project knowledge.
 
-Last updated: 2026-05-16 (Reddit organic drop logged; X May 10 post telemetry corrected to actual numbers; LinkedIn second post analytics added; channel-activity log section added)
+Last updated: 2026-05-16 (Reddit organic drop logged; X May 10 post telemetry corrected to actual numbers; LinkedIn second post analytics added; channel-activity log section added; u/Biotica_App Reddit account added; brand vs personal Reddit strategy documented; warm-up period defined)
 
 ---
 
@@ -27,6 +27,36 @@ Threads to watch for replies. If OP or other commenters engage, respond non-prom
 | Thread | Subreddit | Watch for | Response approach |
 |---|---|---|---|
 | https://www.reddit.com/r/ClaudeAI/comments/1tcftws/ | r/ClaudeAI | Reply from -LabRecon or killermonkey84 asking what Biotica does | One sentence: map one specific feature to what they described. Lab uploads + correlations across supplements + sleep. No feature list. No CTA. |
+
+### Reddit account strategy: u/monohybrid vs u/Biotica_App
+
+Two accounts, two jobs. Do not mix the playbooks.
+
+**u/monohybrid (Chris personal) — organic drop + thread presence**
+
+Continues as the primary active Reddit surface. Uses the "unpromoted recommendation drop" playbook below. The personal account has history, karma, and credibility. This is where the organic URL drops live. Cold drops in vendor-skeptical communities (r/Biohackers, r/QuantifiedSelf, r/Supplements, r/ClaudeAI) only work from an account that reads as a real user, not a brand handle.
+
+**u/Biotica_App (brand) — identity claim + future support surface**
+
+Different use cases entirely:
+- Responding to direct questions when someone explicitly asks about the app or tags it by name
+- Hosting any future AMA in a community that has invited it
+- Responding to support-shaped reports in subs where someone explicitly mentions Biotica
+- Owning posts in r/Biotica or a dedicated sub if one is created later
+
+NOT for cold drops in r/Biohackers, r/QuantifiedSelf, or similar. Brand handles in vendor-skeptical communities trigger self-promo flags from mods and downvotes from users. The organic trust that makes the u/monohybrid drops work evaporates the moment there is a brand handle on the post.
+
+**Warm-up period: 30-day minimum before u/Biotica_App is useful**
+
+Account is 0 days old with 0 karma as of 2026-05-16. Most major subreddits auto-filter or auto-remove posts from accounts under 30 days old and/or below a karma floor (typically 10-50 comment karma depending on the sub). Even genuine comments from the account will likely get caught in mod queues.
+
+Recommended warm-up approach:
+- Let the account age. No forced activity.
+- If genuine comments arise in threads directly about Biotica, they are acceptable — but do not chase karma through off-topic commenting to inflate the number artificially. Mods pattern-match that.
+- Do not post any biotica.app links from u/Biotica_App before the 30-day mark (earliest useful date: 2026-06-15).
+- Do not post from u/Biotica_App in any sub before 30 days. The natural-drop playbook stays on u/monohybrid.
+
+Earliest the brand account becomes a meaningful surface: late June, and only for the specific use cases above.
 
 ### The "unpromoted recommendation drop" playbook
 
@@ -86,6 +116,8 @@ This is not a copy problem. The post itself performed well (77 profile visits fr
 | LinkedIn | Chris's personal account posted May 10 (origin-story post) — 3,268 impressions, 69 reactions, 6 comments. Biotica brand page not yet created. | @chrismontfort (personal) |
 | Facebook Page | Not started — critical-path for IG recovery | TBD |
 | Threads | Not started | TBD |
+| Reddit (brand) | Created 2026-05-16. Age: 0 days. Karma: 0. No posts. Warm-up only — see strategy below. | u/Biotica_App |
+| Reddit (personal) | Active. Organic drop playbook live. See channel-activity log. | u/monohybrid |
 
 Headline: X is the priority channel for brand. LinkedIn personal (Chris's account) is producing real reach right now — 3,268 impressions on May 10 post. A Biotica company page on LinkedIn is worth setting up once X is rolling, but Chris's personal account is already a functioning marketing surface.
 
@@ -475,6 +507,7 @@ Brand-asset items to verify:
 
 In rough priority order:
 
+0. **DO NOT post from u/Biotica_App for the first 30 days (before 2026-06-15).** Account warm-up only — let it age. The natural-drop playbook stays on u/monohybrid. Earliest useful date for brand-account activity: late June.
 1. Resolve IG state once the second attempt's outcome is known
 2. Set up LinkedIn (founder-voiced, longer-form than X)
 3. Create FB Business Page (load-bearing for Meta ads later, also unlocks
