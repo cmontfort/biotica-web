@@ -4,7 +4,41 @@ Operational log tracking the work to spin up Biotica's social presence.
 Companion to `roadmap.md`, `voice-examples.md`, `biotica-brand.md` in the
 marketing project knowledge.
 
-Last updated: 2026-05-11 (May 10 post telemetry ingested; warm-up strategy updated; waitlist conversion funnel diagnosis added)
+Last updated: 2026-05-16 (Reddit organic drop logged; X May 10 post telemetry corrected to actual numbers; LinkedIn second post analytics added; channel-activity log section added)
+
+---
+
+## Channel-activity log
+
+Running log of organic channel actions, drops, and results. Append entries; do not delete.
+
+| Date | Channel | Action | Context | Result |
+|---|---|---|---|---|
+| 2026-05-10 | X (@biotica_app) | First post — origin story / coach problem-statement | Brand-new account, warm-up phase. "I've logged 365+ workouts. Dropped over 45 lbs in 2 years..." | 10 impressions (per X native analytics; LinkedIn export shows 28 on 05/10 which is a different post — see note below), 2 engagements, 1 detail expand, 1 profile visit, 0 likes/RT/replies |
+| 2026-05-10 | LinkedIn (personal) | Post — "Why we built Biotica" product origin post | Second LinkedIn post. "The tools to track training, sleep, and body comp seriously already exist. They just don't talk to each other..." | 64 impressions (all followers), 3 clicks, 4.7% CTR, 0 reactions, 0 comments |
+| 2026-05-15 | Reddit (r/ClaudeAI) | Organic URL drop as @monohybrid | Thread: OP -LabRecon built LabRecon.io (lab price comparison + plain-English lab analysis). Reply killermonkey84 explicitly described building a personal app that tracks supplements, sleep data, and uploads lab PDFs. Chris replied "Sounds like https://biotica.app" — non-promotional, single sentence. | 2 upvotes as of 2026-05-15. No replies yet. Thread URL: https://www.reddit.com/r/ClaudeAI/comments/1tcftws/comment/om2ky4a/ |
+
+**Note on X telemetry discrepancy:** The LinkedIn analytics export filename (`biotica-app_content_*.xls`) is mislabeled — the sheet headers say "LinkedIn" and the data is LinkedIn's aggregated metrics view. Actual X numbers for the May 10 post per X native analytics: 10 impressions / 2 engagements (consistent with the warm-up phase interpretation — follower-only reach).
+
+### Reddit monitoring list
+
+Threads to watch for replies. If OP or other commenters engage, respond non-promotionally.
+
+| Thread | Subreddit | Watch for | Response approach |
+|---|---|---|---|
+| https://www.reddit.com/r/ClaudeAI/comments/1tcftws/ | r/ClaudeAI | Reply from -LabRecon or killermonkey84 asking what Biotica does | One sentence: map one specific feature to what they described. Lab uploads + correlations across supplements + sleep. No feature list. No CTA. |
+
+### The "unpromoted recommendation drop" playbook
+
+Pattern that has surfaced twice this week: someone publicly describes the multi-source-tracking pain, Chris (or biotica account) drops the URL in a single sentence that reads as one user recommending to another, not as a founder promoting.
+
+Conditions for a valid drop:
+- The person's post explicitly describes a problem Biotica solves (multi-source correlation, holding data in your head, fragmented apps)
+- Chris's account has prior history in that community or thread (not a drive-by)
+- The reply is one sentence max, no marketing language, no feature list, no CTA
+- The URL is the only signal — let the landing page do the selling
+
+When this works it lands 2-5 upvotes and earns a reply asking "what does it do?" That follow-up is the real opportunity — one specific feature answer, not a pitch.
 
 ---
 
@@ -157,6 +191,52 @@ If Path 2 also fails: Path 1 (Meta Verified) is the escape hatch — pay the $22
 
 ---
 
+## LinkedIn post analytics
+
+### May 10 — "Why we built Biotica" (product origin post, "All posts" tab)
+
+Post excerpt: "Why we built Biotica: The tools to track training, sleep, and body comp seriously already exist. They just don't talk to each other..."
+
+| Metric | Value |
+|---|---|
+| Impressions (all followers) | 64 |
+| Clicks | 3 |
+| CTR | 4.7% |
+| Reactions | 0 |
+| Comments | 0 |
+| Reposts | 0 |
+| Follows gained | 0 |
+
+Note: this is a lower-performing post than the April 20 post. No audience breakdown available in the export for this one.
+
+### April 20 — origin/product post (individual post analytics export)
+
+Post URL: https://www.linkedin.com/feed/update/urn:li:share:7452042820581982208
+Posted: Apr 20, 2026 at 5:17 PM
+
+| Metric | Value |
+|---|---|
+| Impressions | 1,494 |
+| Members reached | 888 |
+| Profile viewers from this post | 24 |
+| Followers gained | 0 |
+| Reactions | 26 |
+| Comments | 1 |
+| Reposts | 0 |
+| Saves | 1 |
+| Sends on LinkedIn | 2 |
+
+**Top audience segments:**
+- Seniority: Senior 36%, Manager 15%, Director 14%, CXO 5%
+- Company: Robinhood 13%, Google 4%, AMD 3%
+- Industry: IT Services 29%, Financial Services 12%, Tech/Internet 10%, Software Dev 5%
+- Location: SF Bay Area 17%, NYC Metro 11%, Greater Boston 9%
+- Top job title: Program Manager 3%, Technical Program Manager 2%, Software Engineer 2%
+
+**Interpretation:** The April 20 post reached a highly professional tech/finance audience. Senior/Manager/Director/CXO combined = 65% of audience. Robinhood being 13% of company reach confirms this is Chris's work network amplifying, not cold Biotica audience. 24 profile visitors, 0 followers gained = same missing-CTA problem as the May 10 post diagnosed in the funnel audit above.
+
+---
+
 ## X warm-up plan
 
 The account hit the follow rate limit on May 8 evening, which means X is
@@ -178,7 +258,7 @@ Post: "I've logged 365+ workouts. Dropped over 45 lbs in 2 years..." (origin-sto
 
 | Metric | Value |
 |---|---|
-| Impressions | 4 |
+| Impressions | 10 |
 | Engagements | 2 |
 | Detail expands | 1 |
 | Profile visits | 1 |
@@ -186,7 +266,7 @@ Post: "I've logged 365+ workouts. Dropped over 45 lbs in 2 years..." (origin-sto
 | Reposts | 0 |
 | Replies | 0 |
 
-**Interpretation:** These are follower-only numbers. The account has no organic reach yet — 4 impressions means it surfaced to roughly 4 followers/connections and was algorithmically invisible outside that set. This is expected for a brand-new account with 0 followers posting into the void. It does NOT indicate a shadowban; a shadowban would show 0 impressions. These 4 are likely the accounts @biotica_app follows who saw it in their feed.
+**Interpretation:** These are follower-only numbers. The account has no organic reach yet — 10 impressions means it surfaced to a small set of followers/connections and was algorithmically invisible outside that set. This is expected for a brand-new account with 0 followers posting into the void. It does NOT indicate a shadowban; a shadowban would show 0 impressions. The impressions are likely the accounts @biotica_app follows who saw it in their feed.
 
 **What the numbers do NOT tell us:** whether the warm-up is working (too early, 1 post, no followers). The warm-up's job is to establish account legitimacy before the link post, not to generate reach at this stage.
 
