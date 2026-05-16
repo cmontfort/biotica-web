@@ -80,9 +80,10 @@ export default function Privacy() {
           that includes: your sleep score, HRV, readiness score, resting heart rate, body weight, body fat
           percentage, lean mass, step count, active calories, supplement names and dosages, recent workout
           history (exercises, sets, reps, weights), and your coaching question along with recent conversation
-          history. Anthropic processes this prompt and returns a response. Anthropic does not retain your
-          data for model training per their API Terms. AI coach outputs are stored in your Biotica account
-          as part of your coaching history. See{' '}
+          history. Anthropic processes this prompt and returns a response. Anthropic does not use your data
+          to train their models. Per Anthropic&apos;s standard API terms, prompts and responses may be retained
+          by Anthropic for up to 30 days for safety monitoring and abuse prevention, after which they are
+          deleted. AI coach outputs are stored in your Biotica account as part of your coaching history. See{' '}
           <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer">Anthropic Privacy Policy</a>.
         </li>
       </ul>
