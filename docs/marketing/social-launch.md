@@ -4,7 +4,7 @@ Operational log tracking the work to spin up Biotica's social presence.
 Companion to `roadmap.md`, `voice-examples.md`, `biotica-brand.md` in the
 marketing project knowledge.
 
-Last updated: 2026-05-16 (LinkedIn company page added to channel ledger; LinkedIn strategy section added; stale "not yet created" + "don't create" references removed; Threads + Facebook Page confirmed not started; Huberman reply logged in channel-activity log)
+Last updated: 2026-05-16 (LinkedIn company page added to channel ledger; LinkedIn strategy section added; stale "not yet created" + "don't create" references removed; Threads + Facebook Page confirmed not started; Huberman reply logged in channel-activity log; LinkedIn post #3 logged — first with working CTA; voice signal: Chris prefers direct opener over rhetorical-question hook)
 
 ---
 
@@ -18,6 +18,7 @@ Running log of organic channel actions, drops, and results. Append entries; do n
 | 2026-05-10 | LinkedIn (personal) | Post — "Why we built Biotica" product origin post | Second LinkedIn post. "The tools to track training, sleep, and body comp seriously already exist. They just don't talk to each other..." | 64 impressions (all followers), 3 clicks, 4.7% CTR, 0 reactions, 0 comments |
 | 2026-05-15 | Reddit (r/ClaudeAI) | Organic URL drop as @monohybrid | Thread: OP -LabRecon built LabRecon.io (lab price comparison + plain-English lab analysis). Reply killermonkey84 explicitly described building a personal app that tracks supplements, sleep data, and uploads lab PDFs. Chris replied "Sounds like https://biotica.app" — non-promotional, single sentence. | 2 upvotes as of 2026-05-15. No replies yet. Thread URL: https://www.reddit.com/r/ClaudeAI/comments/1tcftws/comment/om2ky4a/ |
 | 2026-05-16 | X (@biotica_app) | Reply to @hubermanlab | Thread: https://x.com/hubermanlab/status/2055328122191647094 (Huberman's tweet: training forearms + neck, body parts people skip). Reply (275 chars): "Under accumulated fatigue, the first training variable to degrade is not intensity. It is execution quality. RPE holds, rep count holds, but the actual stimulus changes. I started logging whether I hit tempo and ROM, not just weight and reps. The gap was wider than expected." | Engagement pending. Topic fit is loose (Huberman: neglected body parts; reply: fatigue-induced form degradation). Check impressions in 48h and compare to tighter-fit replies. If this underperforms, tighten variant-to-topic match criteria in scripts/x-targets.json. Day 2 of warm-up window (2 of target 3-5 replies today). |
+| 2026-05-16 | LinkedIn (personal) | Post — "I lost 45 lbs" / context-is-the-product framing | Third LinkedIn post. Option C variant with Chris edits: direct opener ("I lost 45 lbs over 2 years") over rhetorical-question hook. Full text: "I lost 45 lbs over 2 years. I logged every workout and tracked every macro, but when I sit with a labs PDF or a trend dip or a stalled cut, the question wass always the same; what was I doing in the 90 days before this? That answer lived across four apps and none of them spoke to each other. So most of the time, the answer was; I don't remember. Biotica's bet is that the context is the product. Every lab result, every weigh-in, every readiness score sits alongside what you were training, eating, and sleeping in the window before it. Pattern visibility instead of pattern recall. Android beta opens late July; join the waitlist at biotica.app" | Impressions pending. NOTE: typo "wass" instead of "was" — flagged to Chris. ✅ CTA included this time (first LinkedIn post with working CTA since audit). Waitlist conversion tracking: check Supabase waitlist table created_at vs post timestamp at 48-72h mark. Compare impressions to April 20 (1,494) and May 10 (64). Check profile visits and biotica.app link CTR in LinkedIn analytics. |
 
 **Note on X telemetry discrepancy:** The LinkedIn analytics export filename (`biotica-app_content_*.xls`) is mislabeled — the sheet headers say "LinkedIn" and the data is LinkedIn's aggregated metrics view. Actual X numbers for the May 10 post per X native analytics: 10 impressions / 2 engagements (consistent with the warm-up phase interpretation — follower-only reach).
 
@@ -302,6 +303,16 @@ Posted: Apr 20, 2026 at 5:17 PM
 - Industry: IT Services 29%, Financial Services 12%, Tech/Internet 10%, Software Dev 5%
 - Location: SF Bay Area 17%, NYC Metro 11%, Greater Boston 9%
 - Top job title: Program Manager 3%, Technical Program Manager 2%, Software Engineer 2%
+
+### May 16 — "I lost 45 lbs" / context-is-the-product
+
+Post text: see channel-activity log entry above (2026-05-16 LinkedIn row).
+
+Metrics: pending 48-72h. Check impressions, profile visits, and biotica.app link clicks in LinkedIn analytics. Cross-reference biotica.app waitlist signups (Supabase `waitlist` table, `created_at` filter after ~10 AM ET 2026-05-16).
+
+**Voice signal logged:** Chris edited Option C by replacing the rhetorical-question opener with a direct personal-data hook ("I lost 45 lbs over 2 years"). Kept the 3-paragraph structure (hook / problem / product framing) and the CTA line. Swapped dashes for semicolons throughout (still voice-rule compliant). Apply this preference — direct opener over rhetorical question — on next LinkedIn drafts.
+
+---
 
 **Interpretation:** The April 20 post reached a highly professional tech/finance audience. Senior/Manager/Director/CXO combined = 65% of audience. Robinhood being 13% of company reach confirms this is Chris's work network amplifying, not cold Biotica audience. 24 profile visitors, 0 followers gained = same missing-CTA problem as the May 10 post diagnosed in the funnel audit above.
 
