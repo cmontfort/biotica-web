@@ -4,7 +4,7 @@ Operational log tracking the work to spin up Biotica's social presence.
 Companion to `roadmap.md`, `voice-examples.md`, `biotica-brand.md` in the
 marketing project knowledge.
 
-Last updated: 2026-05-16 (Reddit organic drop logged; X May 10 post telemetry corrected to actual numbers; LinkedIn second post analytics added; channel-activity log section added; u/Biotica_App Reddit account added; brand vs personal Reddit strategy documented; warm-up period defined)
+Last updated: 2026-05-16 (LinkedIn company page added to channel ledger; LinkedIn strategy section added; stale "not yet created" + "don't create" references removed; Threads channel-state flagged for confirmation)
 
 ---
 
@@ -113,13 +113,50 @@ This is not a copy problem. The post itself performed well (77 profile visits fr
 |---|---|---|
 | X / Twitter | Profile set up, warm-up in progress. First post live May 10. | `@biotica_app` |
 | Instagram | Both attempts banned — `biotica.app` (5/7) + `biotica_app` (5/8) | both burned |
-| LinkedIn | Chris's personal account posted May 10 (origin-story post) — 3,268 impressions, 69 reactions, 6 comments. Biotica brand page not yet created. | @chrismontfort (personal) |
+| LinkedIn (personal) | Chris's personal account posted May 10 (origin-story post) — 3,268 impressions, 69 reactions, 6 comments. Primary content surface. | @chrismontfort (personal) |
+| LinkedIn (company page) | Created (prior to 2026-05-16, exact date unknown). URL: https://www.linkedin.com/company/biotica-app/ — 0 followers, warm-up phase. Credibility + press/partner inbound surface. Light-cadence milestone posts only. | Biotica |
 | Facebook Page | Not started — critical-path for IG recovery | TBD |
-| Threads | Not started | TBD |
+| Threads | Not started — confirm with Chris whether account exists | TBD |
 | Reddit (brand) | Created 2026-05-16. Age: 0 days. Karma: 0. No posts. Warm-up only — see strategy below. | u/Biotica_App |
 | Reddit (personal) | Active. Organic drop playbook live. See channel-activity log. | u/monohybrid |
 
-Headline: X is the priority channel for brand. LinkedIn personal (Chris's account) is producing real reach right now — 3,268 impressions on May 10 post. A Biotica company page on LinkedIn is worth setting up once X is rolling, but Chris's personal account is already a functioning marketing surface.
+Headline: X is the priority channel for brand. LinkedIn personal (Chris's account) is producing real reach right now — 3,268 impressions on May 10 post. The LinkedIn company page (https://www.linkedin.com/company/biotica-app/) exists and is the credibility + press/partner surface. Chris's personal account drives daily content; the company page runs milestone-post cadence only.
+
+---
+
+## LinkedIn strategy
+
+### Two surfaces, two jobs
+
+**Chris's personal account** is the active content channel. The April 20 post (1,494 impressions, 888 reached, 26 reactions) shows this network is warm and senior. Daily-to-weekly posting lives here. Build-log threads, founder narrative, data observations, product milestones.
+
+**Company page (https://www.linkedin.com/company/biotica-app/)** is the credibility surface. Starts at 0 followers. Not a content-first channel yet. Jobs:
+- Press and partnership inbound: journalists and potential partners check the company page, not Chris's personal. The page existing is the gate.
+- Cross-post amplification: when a personal post gets traction (April 20 level), the company page re-shares with a one-line frame. That is the only regular activity on the page through launch.
+- Milestone posts only: V1.0 ship, a press mention, a fundraising note if applicable. Not daily content.
+- Hiring surface eventually (post-launch).
+
+### Posting cadence through launch
+
+| Surface | Cadence | Content type |
+|---|---|---|
+| Chris personal | 1-3x/week | Build-log, founder narrative, data observations, product milestones |
+| Company page | 1x per major milestone or strong personal post | Milestone announcement or re-share with one-line frame |
+
+### What NOT to do on the company page
+
+- Do not mirror every personal post to the company page. That dilutes the personal account's performance signal and makes the company page look like a bot.
+- Do not run paid on the company page before V1.0 ships. The page has 0 followers and no content history.
+- Do not post from the company page about anything that hasn't shipped or been officially announced.
+
+### Cross-post pattern
+
+When a personal post performs (>500 impressions or 10+ reactions), the company page re-shares. Format:
+
+> [One-line frame that adds company context, not a repeat of the post]
+> [Re-share of Chris's post]
+
+Example frame: "Why we built Biotica -- from our founder." One sentence. Let the original post carry the weight.
 
 ---
 
@@ -509,12 +546,12 @@ In rough priority order:
 
 0. **DO NOT post from u/Biotica_App for the first 30 days (before 2026-06-15).** Account warm-up only — let it age. The natural-drop playbook stays on u/monohybrid. Earliest useful date for brand-account activity: late June.
 1. Resolve IG state once the second attempt's outcome is known
-2. Set up LinkedIn (founder-voiced, longer-form than X)
+2. LinkedIn company page is live (https://www.linkedin.com/company/biotica-app/). See LinkedIn strategy below for how to use it.
 3. Create FB Business Page (load-bearing for Meta ads later, also unlocks
    IG support chat path if needed)
 4. Decide on Meta Verified Business subscription (~$22/mo, mainly for
    support access)
-5. Threads account (Meta side door, low-effort once FB Page exists)
+5. Threads account (Meta side door, low-effort once FB Page exists) — confirm with Chris whether already created
 6. Re-render header with confirmed brand green and font
 
 ---
