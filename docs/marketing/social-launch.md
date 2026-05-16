@@ -4,7 +4,7 @@ Operational log tracking the work to spin up Biotica's social presence.
 Companion to `roadmap.md`, `voice-examples.md`, `biotica-brand.md` in the
 marketing project knowledge.
 
-Last updated: 2026-05-16 (LinkedIn company page added to channel ledger; LinkedIn strategy section added; stale "not yet created" + "don't create" references removed; Threads + Facebook Page confirmed not started)
+Last updated: 2026-05-16 (LinkedIn company page added to channel ledger; LinkedIn strategy section added; stale "not yet created" + "don't create" references removed; Threads + Facebook Page confirmed not started; Huberman reply logged in channel-activity log)
 
 ---
 
@@ -17,6 +17,7 @@ Running log of organic channel actions, drops, and results. Append entries; do n
 | 2026-05-10 | X (@biotica_app) | First post — origin story / coach problem-statement | Brand-new account, warm-up phase. "I've logged 365+ workouts. Dropped over 45 lbs in 2 years..." | 10 impressions (per X native analytics; LinkedIn export shows 28 on 05/10 which is a different post — see note below), 2 engagements, 1 detail expand, 1 profile visit, 0 likes/RT/replies |
 | 2026-05-10 | LinkedIn (personal) | Post — "Why we built Biotica" product origin post | Second LinkedIn post. "The tools to track training, sleep, and body comp seriously already exist. They just don't talk to each other..." | 64 impressions (all followers), 3 clicks, 4.7% CTR, 0 reactions, 0 comments |
 | 2026-05-15 | Reddit (r/ClaudeAI) | Organic URL drop as @monohybrid | Thread: OP -LabRecon built LabRecon.io (lab price comparison + plain-English lab analysis). Reply killermonkey84 explicitly described building a personal app that tracks supplements, sleep data, and uploads lab PDFs. Chris replied "Sounds like https://biotica.app" — non-promotional, single sentence. | 2 upvotes as of 2026-05-15. No replies yet. Thread URL: https://www.reddit.com/r/ClaudeAI/comments/1tcftws/comment/om2ky4a/ |
+| 2026-05-16 | X (@biotica_app) | Reply to @hubermanlab | Thread: https://x.com/hubermanlab/status/2055328122191647094 (Huberman's tweet: training forearms + neck, body parts people skip). Reply (275 chars): "Under accumulated fatigue, the first training variable to degrade is not intensity. It is execution quality. RPE holds, rep count holds, but the actual stimulus changes. I started logging whether I hit tempo and ROM, not just weight and reps. The gap was wider than expected." | Engagement pending. Topic fit is loose (Huberman: neglected body parts; reply: fatigue-induced form degradation). Check impressions in 48h and compare to tighter-fit replies. If this underperforms, tighten variant-to-topic match criteria in scripts/x-targets.json. Day 2 of warm-up window (2 of target 3-5 replies today). |
 
 **Note on X telemetry discrepancy:** The LinkedIn analytics export filename (`biotica-app_content_*.xls`) is mislabeled — the sheet headers say "LinkedIn" and the data is LinkedIn's aggregated metrics view. Actual X numbers for the May 10 post per X native analytics: 10 impressions / 2 engagements (consistent with the warm-up phase interpretation — follower-only reach).
 
