@@ -4,7 +4,7 @@ Operational log tracking the work to spin up Biotica's social presence.
 Companion to `roadmap.md`, `voice-examples.md`, `biotica-brand.md` in the
 marketing project knowledge.
 
-Last updated: 2026-05-16 (LinkedIn company page added to channel ledger; LinkedIn strategy section added; stale "not yet created" + "don't create" references removed; Threads channel-state flagged for confirmation)
+Last updated: 2026-05-16 (LinkedIn company page added to channel ledger; LinkedIn strategy section added; stale "not yet created" + "don't create" references removed; Threads + Facebook Page confirmed not started)
 
 ---
 
@@ -115,8 +115,8 @@ This is not a copy problem. The post itself performed well (77 profile visits fr
 | Instagram | Both attempts banned — `biotica.app` (5/7) + `biotica_app` (5/8) | both burned |
 | LinkedIn (personal) | Chris's personal account posted May 10 (origin-story post) — 3,268 impressions, 69 reactions, 6 comments. Primary content surface. | @chrismontfort (personal) |
 | LinkedIn (company page) | Created (prior to 2026-05-16, exact date unknown). URL: https://www.linkedin.com/company/biotica-app/ — 0 followers, warm-up phase. Credibility + press/partner inbound surface. Light-cadence milestone posts only. | Biotica |
-| Facebook Page | Not started — critical-path for IG recovery | TBD |
-| Threads | Not started — confirm with Chris whether account exists | TBD |
+| Facebook Page | Confirmed not started 2026-05-16. Still critical-path for IG recovery (FB Business → IG Business handle re-register) per § "IG appeal options" below. | TBD |
+| Threads | Confirmed not started 2026-05-16. Not on the launch roadmap; defer until X has traction. | TBD |
 | Reddit (brand) | Created 2026-05-16. Age: 0 days. Karma: 0. No posts. Warm-up only — see strategy below. | u/Biotica_App |
 | Reddit (personal) | Active. Organic drop playbook live. See channel-activity log. | u/monohybrid |
 
