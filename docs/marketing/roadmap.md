@@ -7,7 +7,7 @@ Not the same as the engineering backlog (which lives in `~/.claude/projects/-Use
 moves between sections below.** Then re-upload to the Claude.ai marketing project
 (Knowledge → replace `roadmap.md`).
 
-Last synced: 2026-05-08
+Last synced: 2026-05-14
 
 ---
 
@@ -109,7 +109,7 @@ under any circumstance:
 - Detailed tier-margin math (panel margins, Pro subsidy figures)
 - Vendor wholesale pricing (Junction, Anthropic API spend, Workspace cost)
 - Feature subscription counts before announcement (e.g. "X people are on the labs waitlist") — only post these once they're load-bearing for the launch story
-- **Internal launch dates pre-public-announcement.** The 2026-06-08 Android / 2026-06-29 iOS targets in `docs/launch/2026-05-07/launch-plan.md` are operating dates only. Do NOT reference them in any post, email, or external comm. No T-X countdowns. No "shipping next week" language. The public-date flag flips when Chris approves it for marketing — not before.
+- **Internal launch dates pre-public-announcement.** The current authoritative operating dates are **Android 2026-07-28 / iOS 2026-08-04** (T-73 / T-80 as of 2026-05-16). The **T-22 marketing warm-up anchor is ~2026-07-06 (Android)**. These are operating dates only. Do NOT reference them in any post, email, or external comm. No T-X countdowns. No "shipping next week" language. The public-date flag flips when Chris approves it for marketing — not before. (Prior retired targets: 06-08/06-29, then 06-15/06-29, then 07-21/07-28 — all superseded.)
 - QA / pentest specifics — RLS coverage detail, OWASP findings, severity counts
 
 If a draft references any of these, push back on it. Don't ship.

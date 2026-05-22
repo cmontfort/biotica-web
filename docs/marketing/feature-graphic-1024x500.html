@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Biotica — Play Store Feature Graphic (1024x500)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: #1a1a1a;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .canvas {
+    width: 1024px;
+    height: 500px;
+    background: #0D0D0D;
+    position: relative;
+    overflow: hidden;
+    /* subtle horizontal sweep for depth */
+    background-image:
+      linear-gradient(90deg, #0D0D0D 0%, #111111 60%, #0D0D0D 100%);
+  }
+  .content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 64px 0 64px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+  }
+  .headline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 78px;
+    line-height: 1.05;
+    color: #FFFFFF;
+    letter-spacing: -2px;
+  }
+  .headline .accent { color: #4ADE80; }
+  /* Wordmark sits at the bottom, riding the heartbeat baseline */
+  .wordmark {
+    position: absolute;
+    left: 64px;
+    bottom: 48px;
+    z-index: 2;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 1px;
+  }
+  .wordmark .bio { color: #4ADE80; }
+  .wordmark .tica { color: #FFFFFF; }
+  /* ECG heartbeat line spanning the full canvas */
+  .ecg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+  /* Helper: small Chrome devtools instructions; not visible in 1024x500 canvas */
+  .instructions {
+    position: fixed;
+    bottom: 8px;
+    left: 8px;
+    color: #555;
+    font-size: 11px;
+    font-family: 'Inter', sans-serif;
+    z-index: 99;
+    background: rgba(0,0,0,0.6);
+    padding: 6px 10px;
+    border-radius: 4px;
+    line-height: 1.4;
+  }
+  @media (max-width: 1100px) {
+    .canvas { transform: scale(0.8); transform-origin: center; }
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="content">
+    <div class="headline">One coach.<br/>All your data.</div>
+  </div>
+  <div class="wordmark"><span class="bio">Bio</span><span class="tica">tica</span></div>
+
+  <!-- ECG heartbeat line spanning the canvas — mirrors the Biotica logo's signature element.
+       Baseline runs at y=400 (lower third). One full QRS complex centered around x=720 (right of center)
+       with a smaller P-wave anticipation pulse on the left. Stroke uses a left-to-right opacity fade
+       so the line builds in intensity toward the beat — reads as "data converging into a signal." -->
+  <svg class="ecg" viewBox="0 0 1024 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="ecgFade" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#4ADE80" stop-opacity="0.15"/>
+        <stop offset="35%" stop-color="#4ADE80" stop-opacity="0.55"/>
+        <stop offset="65%" stop-color="#4ADE80" stop-opacity="1"/>
+        <stop offset="85%" stop-color="#4ADE80" stop-opacity="0.85"/>
+        <stop offset="100%" stop-color="#4ADE80" stop-opacity="0.3"/>
+      </linearGradient>
+      <radialGradient id="beatGlow" cx="70%" cy="80%" r="35%">
+        <stop offset="0%" stop-color="#4ADE80" stop-opacity="0.18"/>
+        <stop offset="60%" stop-color="#4ADE80" stop-opacity="0.05"/>
+        <stop offset="100%" stop-color="#4ADE80" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <!-- Soft glow behind the QRS complex -->
+    <rect x="0" y="0" width="1024" height="500" fill="url(#beatGlow)"/>
+
+    <!-- ECG waveform path. Baseline y=400.
+         Sequence: flat → small P wave → flat → Q dip → R spike → S dip → T wave → flat -->
+    <path d="
+      M 0 400
+      L 380 400
+      Q 420 392, 460 400
+      L 600 400
+      L 680 400
+      L 700 415
+      L 720 290
+      L 740 470
+      L 760 400
+      Q 800 392, 840 400
+      L 1024 400
+    "
+    stroke="url(#ecgFade)"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"/>
+
+    <!-- Small accent dot at the R-wave peak -->
+    <circle cx="720" cy="290" r="5" fill="#4ADE80"/>
+    <circle cx="720" cy="290" r="12" fill="none" stroke="#4ADE80" stroke-width="1" opacity="0.45"/>
+  </svg>
+</div>
+
+<div class="instructions">
+  Chrome DevTools → Toggle device toolbar → Set dimensions 1024 × 500 → Take screenshot (⋮ menu → "Capture screenshot")
+</div>
+</body>
+</html>

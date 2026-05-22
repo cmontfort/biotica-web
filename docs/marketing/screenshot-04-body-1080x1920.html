@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Biotica — Play Store Screenshot 04: Body Trend (1080x1920)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600&family=Lexend:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: #1a1a1a;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .canvas {
+    width: 1080px;
+    height: 1920px;
+    background: #09090B;
+    position: relative;
+    overflow: hidden;
+    color: #FAFAFA;
+  }
+  /* Status bar */
+  .status-bar {
+    height: 72px;
+    padding: 0 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 28px;
+    font-weight: 600;
+    color: #FAFAFA;
+  }
+  .status-bar .right { display: flex; gap: 18px; align-items: center; }
+  /* Header */
+  .header {
+    padding: 32px 48px 24px 48px;
+  }
+  .header h1 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 64px;
+    font-weight: 600;
+    color: #FAFAFA;
+    letter-spacing: -1.2px;
+    margin-bottom: 8px;
+  }
+  .header p {
+    font-family: 'Lexend', sans-serif;
+    font-size: 26px;
+    color: #A1A1AA;
+  }
+  /* Page */
+  .page {
+    padding: 0 32px 24px 32px;
+  }
+  /* Range selector */
+  .range-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 0 4px;
+  }
+  .segmented {
+    display: inline-flex;
+    background: #18181B;
+    border: 1px solid #27272A;
+    border-radius: 14px;
+    padding: 4px;
+    gap: 2px;
+  }
+  .segmented .seg {
+    padding: 14px 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    font-weight: 600;
+    color: #A1A1AA;
+    border-radius: 10px;
+    letter-spacing: 1px;
+  }
+  .segmented .seg.active {
+    background: #4ADE80;
+    color: #09090B;
+  }
+  .avg-label {
+    font-family: 'Lexend', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #A1A1AA;
+  }
+  /* Trend summary card */
+  .card {
+    background: #18181B;
+    border: 1px solid #3F3F46;
+    border-radius: 22px;
+    padding: 28px 32px;
+    margin-bottom: 18px;
+  }
+  .summary-card .headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #4ADE80;
+    letter-spacing: -0.8px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .summary-card .headline .mdi { font-size: 44px; }
+  .summary-card .sub {
+    font-family: 'Lexend', sans-serif;
+    font-size: 26px;
+    color: #A1A1AA;
+  }
+  /* Chart card */
+  .chart-card {
+    padding: 26px 24px 22px 24px;
+  }
+  .chart-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    margin-bottom: 14px;
+  }
+  .chart-head .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    font-weight: 600;
+    color: #A1A1AA;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+  }
+  .chart-head .current {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+  }
+  .chart-head .current .unit {
+    font-size: 22px;
+    color: #A1A1AA;
+    font-weight: 500;
+    margin-left: 4px;
+  }
+  .chart-svg {
+    width: 100%;
+    height: 260px;
+    display: block;
+  }
+  .chart-axis {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 8px 0 8px;
+  }
+  .chart-axis span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    color: #71717A;
+    letter-spacing: 0.5px;
+  }
+  /* Tab bar */
+  .tab-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: #18181B;
+    border-top: 1px solid #3F3F46;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 32px;
+  }
+  .tab { color: #71717A; display: flex; align-items: center; justify-content: center; }
+  .tab.active { color: #4ADE80; }
+  .tab .icon { font-size: 56px; line-height: 1; }
+  @media (max-width: 1180px) {
+    .canvas { transform: scale(0.42); transform-origin: center; }
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <!-- Status bar -->
+  <div class="status-bar">
+    <span>9:41</span>
+    <div class="right">
+      <span>5G</span>
+      <span>●●●</span>
+      <span>96%</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Body</h1>
+    <p>Trends across the last 30 days</p>
+  </div>
+
+  <div class="page">
+    <!-- Range selector -->
+    <div class="range-row">
+      <div class="segmented">
+        <div class="seg">7D</div>
+        <div class="seg active">30D</div>
+        <div class="seg">6MO</div>
+        <div class="seg">1Y</div>
+      </div>
+      <div class="avg-label">30D avg: 167.4 lb</div>
+    </div>
+
+    <!-- Trend summary -->
+    <div class="card summary-card">
+      <div class="headline">
+        <span class="mdi mdi-arrow-down-bold"></span>
+        Down 2.6 lb
+      </div>
+      <div class="sub">Compared to prior 30-day window</div>
+    </div>
+
+    <!-- Weight chart -->
+    <div class="card chart-card">
+      <div class="chart-head">
+        <div class="label">Weight</div>
+        <div class="current" style="color:#4ADE80;">166.2<span class="unit">lb</span></div>
+      </div>
+      <svg class="chart-svg" viewBox="0 0 1000 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="40" x2="1000" y2="40" stroke="#27272A" stroke-width="1"/>
+        <line x1="0" y1="220" x2="1000" y2="220" stroke="#27272A" stroke-width="1"/>
+        <!-- 30-day weight downtrend line, slight noise -->
+        <polyline
+          fill="none"
+          stroke="#4ADE80"
+          stroke-width="4"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          points="20,70 53,82 86,75 119,90 152,84 185,98 218,92 251,108 284,104 317,118 350,114 383,128 416,122 449,138 482,134 515,148 548,142 581,158 614,152 647,168 680,162 713,178 746,172 779,188 812,182 845,196 878,190 911,202 944,196 977,210"/>
+        <!-- Data points -->
+        <g fill="#4ADE80">
+          <circle cx="20" cy="70" r="5"/>
+          <circle cx="152" cy="84" r="5"/>
+          <circle cx="284" cy="104" r="5"/>
+          <circle cx="416" cy="122" r="5"/>
+          <circle cx="548" cy="142" r="5"/>
+          <circle cx="680" cy="162" r="5"/>
+          <circle cx="812" cy="182" r="5"/>
+          <circle cx="977" cy="210" r="8" stroke="#09090B" stroke-width="3"/>
+        </g>
+        <text x="980" y="34" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="18" fill="#71717A">168.8</text>
+        <text x="980" y="245" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="18" fill="#71717A">165.4</text>
+      </svg>
+      <div class="chart-axis">
+        <span>4/16</span><span>4/23</span><span>4/30</span><span>5/7</span><span>5/16</span>
+      </div>
+    </div>
+
+    <!-- Body fat chart -->
+    <div class="card chart-card">
+      <div class="chart-head">
+        <div class="label">Body fat</div>
+        <div class="current" style="color:#F59E0B;">9.4<span class="unit">%</span></div>
+      </div>
+      <svg class="chart-svg" viewBox="0 0 1000 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="40" x2="1000" y2="40" stroke="#27272A" stroke-width="1"/>
+        <line x1="0" y1="220" x2="1000" y2="220" stroke="#27272A" stroke-width="1"/>
+        <polyline
+          fill="none"
+          stroke="#F59E0B"
+          stroke-width="4"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          points="20,80 53,86 86,82 119,92 152,88 185,96 218,94 251,102 284,98 317,108 350,106 383,116 416,112 449,122 482,118 515,128 548,124 581,134 614,132 647,142 680,138 713,148 746,146 779,156 812,152 845,162 878,160 911,168 944,170 977,178"/>
+        <g fill="#F59E0B">
+          <circle cx="20" cy="80" r="5"/>
+          <circle cx="152" cy="88" r="5"/>
+          <circle cx="284" cy="98" r="5"/>
+          <circle cx="416" cy="112" r="5"/>
+          <circle cx="548" cy="124" r="5"/>
+          <circle cx="680" cy="138" r="5"/>
+          <circle cx="812" cy="152" r="5"/>
+          <circle cx="977" cy="178" r="8" stroke="#09090B" stroke-width="3"/>
+        </g>
+        <text x="980" y="34" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="18" fill="#71717A">11.2%</text>
+        <text x="980" y="245" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="18" fill="#71717A">9.2%</text>
+      </svg>
+      <div class="chart-axis">
+        <span>4/16</span><span>4/23</span><span>4/30</span><span>5/7</span><span>5/16</span>
+      </div>
+    </div>
+
+    <!-- Lean mass chart -->
+    <div class="card chart-card">
+      <div class="chart-head">
+        <div class="label">Lean mass</div>
+        <div class="current" style="color:#3B82F6;">150.6<span class="unit">lb</span></div>
+      </div>
+      <svg class="chart-svg" viewBox="0 0 1000 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="40" x2="1000" y2="40" stroke="#27272A" stroke-width="1"/>
+        <line x1="0" y1="220" x2="1000" y2="220" stroke="#27272A" stroke-width="1"/>
+        <polyline
+          fill="none"
+          stroke="#3B82F6"
+          stroke-width="4"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          points="20,180 53,176 86,178 119,168 152,170 185,162 218,164 251,154 284,156 317,148 350,150 383,140 416,142 449,132 482,134 515,124 548,126 581,118 614,120 647,108 680,110 713,102 746,104 779,94 812,96 845,86 878,88 911,80 944,78 977,70"/>
+        <g fill="#3B82F6">
+          <circle cx="20" cy="180" r="5"/>
+          <circle cx="152" cy="170" r="5"/>
+          <circle cx="284" cy="156" r="5"/>
+          <circle cx="416" cy="142" r="5"/>
+          <circle cx="548" cy="126" r="5"/>
+          <circle cx="680" cy="110" r="5"/>
+          <circle cx="812" cy="96" r="5"/>
+          <circle cx="977" cy="70" r="8" stroke="#09090B" stroke-width="3"/>
+        </g>
+        <text x="980" y="34" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="18" fill="#71717A">150.6</text>
+        <text x="980" y="245" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="18" fill="#71717A">148.2</text>
+      </svg>
+      <div class="chart-axis">
+        <span>4/16</span><span>4/23</span><span>4/30</span><span>5/7</span><span>5/16</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab bar — Body screen is hidden from the tab bar (href: null),
+       reached via dashboard BodyCard tap. The dashboard tab indicator
+       stays active while on Body, matching real app behavior. -->
+  <div class="tab-bar">
+    <div class="tab active"><span class="mdi mdi-home icon"></span></div>
+    <div class="tab"><span class="mdi mdi-dumbbell icon"></span></div>
+    <div class="tab"><span class="mdi mdi-pill icon"></span></div>
+    <div class="tab"><span class="mdi mdi-flask-outline icon"></span></div>
+    <div class="tab"><span class="mdi mdi-whistle-outline icon"></span></div>
+    <div class="tab"><span class="mdi mdi-cog-outline icon"></span></div>
+  </div>
+</div>
+</body>
+</html>

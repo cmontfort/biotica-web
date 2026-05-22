@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Biotica — Play Store Screenshot 02: Dashboard (1080x1920)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600&family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: #1a1a1a;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .canvas {
+    width: 1080px;
+    height: 1920px;
+    background: #09090B;
+    position: relative;
+    overflow: hidden;
+    color: #FAFAFA;
+  }
+  /* Status bar */
+  .status-bar {
+    height: 72px;
+    padding: 0 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #FAFAFA;
+  }
+  .status-bar .right { display: flex; gap: 18px; align-items: center; }
+  /* Page content */
+  .page {
+    padding: 0 32px 24px 32px;
+  }
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 16px 24px 16px;
+  }
+  .header .greeting h1 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 64px;
+    font-weight: 600;
+    color: #FAFAFA;
+    letter-spacing: -1.2px;
+    margin-bottom: 6px;
+  }
+  .header .greeting p {
+    font-family: 'Lexend', 'Inter', sans-serif;
+    font-size: 28px;
+    color: #A1A1AA;
+  }
+  .header .logo {
+    width: 88px;
+    height: 88px;
+    border-radius: 22px;
+    background: #18181B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .header .logo svg { width: 80%; height: 80%; }
+  /* Date navigator */
+  .date-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 8px 24px 8px;
+    gap: 6px;
+  }
+  .date-chip {
+    flex: 1;
+    text-align: center;
+    padding: 14px 0 18px 0;
+    border-radius: 18px;
+    font-family: 'Inter', sans-serif;
+  }
+  .date-chip .dow {
+    font-size: 22px;
+    color: #71717A;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 8px;
+  }
+  .date-chip .day {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: #FAFAFA;
+  }
+  .date-chip.today {
+    background: #4ADE80;
+  }
+  .date-chip.today .dow { color: #09090B; }
+  .date-chip.today .day { color: #09090B; }
+  /* Card base */
+  .card {
+    background: #18181B;
+    border: 1px solid #3F3F46;
+    border-radius: 24px;
+    padding: 32px;
+    margin-bottom: 20px;
+  }
+  /* Coach card */
+  .coach-card {
+    border-color: rgba(232, 121, 249, 0.28);
+    background:
+      linear-gradient(135deg, rgba(232,121,249,0.10) 0%, rgba(74,222,128,0.03) 60%, rgba(232,121,249,0) 100%),
+      #18181B;
+  }
+  .coach-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .coach-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    background: rgba(232, 121, 249, 0.14);
+    border: 1.5px solid rgba(232, 121, 249, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E879F9;
+    font-size: 28px;
+  }
+  .coach-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #E879F9;
+  }
+  .coach-tag {
+    margin-left: auto;
+    padding: 4px 14px;
+    border: 1px solid rgba(232, 121, 249, 0.4);
+    border-radius: 8px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #E879F9;
+  }
+  .coach-body {
+    font-family: 'Lexend', 'Inter', sans-serif;
+    font-size: 30px;
+    line-height: 1.45;
+    color: #FAFAFA;
+  }
+  .coach-body strong { color: #E879F9; font-weight: 600; }
+  /* Today card */
+  .today-card { padding: 32px; }
+  .today-readiness {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #27272A;
+  }
+  .ring {
+    width: 128px;
+    height: 128px;
+    border-radius: 999px;
+    background:
+      conic-gradient(#4ADE80 0% 78%, #27272A 78% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .ring-inner {
+    width: 100px;
+    height: 100px;
+    border-radius: 999px;
+    background: #18181B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    color: #FAFAFA;
+  }
+  .today-meta .title {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: #FAFAFA;
+    margin-bottom: 4px;
+  }
+  .today-meta .sub {
+    font-family: 'Lexend', sans-serif;
+    font-size: 24px;
+    color: #A1A1AA;
+  }
+  .agenda-list { display: flex; flex-direction: column; gap: 18px; }
+  .agenda-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 4px 0;
+  }
+  .agenda-check {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+  .agenda-check.done {
+    background: rgba(74, 222, 128, 0.14);
+    color: #4ADE80;
+  }
+  .agenda-check.pending {
+    border: 1.5px solid #3F3F46;
+    color: transparent;
+  }
+  .agenda-body { flex: 1; }
+  .agenda-body .label {
+    font-family: 'Lexend', sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #FAFAFA;
+    margin-bottom: 2px;
+  }
+  .agenda-body .meta {
+    font-family: 'Lexend', sans-serif;
+    font-size: 22px;
+    color: #A1A1AA;
+  }
+  .agenda-item.done .label {
+    text-decoration: line-through;
+    text-decoration-color: rgba(74,222,128,0.4);
+    color: #A1A1AA;
+  }
+  /* Activity card */
+  .activity-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .activity-head .icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: rgba(74, 222, 128, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4ADE80;
+    font-size: 30px;
+  }
+  .activity-head .title {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #FAFAFA;
+  }
+  .activity-head .source {
+    margin-left: auto;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #71717A;
+    letter-spacing: 1.5px;
+  }
+  .activity-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .stat .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #71717A;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .stat .value {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 56px;
+    font-weight: 600;
+    color: #FAFAFA;
+    letter-spacing: -1px;
+    margin-bottom: 4px;
+  }
+  .stat .value .unit {
+    font-size: 28px;
+    color: #A1A1AA;
+    margin-left: 6px;
+  }
+  .stat .delta {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #4ADE80;
+  }
+  .stat .progress-bar {
+    margin-top: 12px;
+    height: 6px;
+    background: #27272A;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .stat .progress-bar .fill {
+    height: 100%;
+    background: #4ADE80;
+    border-radius: 999px;
+  }
+  /* Tab bar */
+  .tab-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: #18181B;
+    border-top: 1px solid #3F3F46;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 32px;
+  }
+  .tab {
+    color: #71717A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tab.active { color: #4ADE80; }
+  .tab .icon { font-size: 56px; line-height: 1; }
+  @media (max-width: 1180px) {
+    .canvas { transform: scale(0.42); transform-origin: center; }
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <!-- Status bar -->
+  <div class="status-bar">
+    <span>9:41</span>
+    <div class="right">
+      <span>5G</span>
+      <span>●●●</span>
+      <span>96%</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <!-- Header with greeting + logo -->
+    <div class="header">
+      <div class="greeting">
+        <h1>Good morning</h1>
+        <p>Saturday, May 16</p>
+      </div>
+      <div class="logo">
+        <!-- Biotica B + ECG inline SVG (matches assets/logo.png) -->
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="100" height="100" rx="22" fill="#0D0D0D"/>
+          <text x="50" y="68" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="62" fill="#4ADE80">B</text>
+          <path d="M 8 52 L 28 52 L 32 44 L 38 60 L 44 36 L 50 64 L 56 50 L 92 50" stroke="#4ADE80" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Date navigator (7 days, Saturday selected) -->
+    <div class="date-nav">
+      <div class="date-chip"><div class="dow">Sun</div><div class="day">10</div></div>
+      <div class="date-chip"><div class="dow">Mon</div><div class="day">11</div></div>
+      <div class="date-chip"><div class="dow">Tue</div><div class="day">12</div></div>
+      <div class="date-chip"><div class="dow">Wed</div><div class="day">13</div></div>
+      <div class="date-chip"><div class="dow">Thu</div><div class="day">14</div></div>
+      <div class="date-chip"><div class="dow">Fri</div><div class="day">15</div></div>
+      <div class="date-chip today"><div class="dow">Sat</div><div class="day">16</div></div>
+    </div>
+
+    <!-- Coach card -->
+    <div class="card coach-card">
+      <div class="coach-head">
+        <div class="coach-avatar">✦</div>
+        <div class="coach-label">COACH</div>
+        <div class="coach-tag">ELITE</div>
+      </div>
+      <div class="coach-body">
+        Readiness climbed <strong>8 points</strong> this week as sleep efficiency stabilized above <strong>90%</strong>. Volume held flat across all 4 sessions. Tomorrow's a deload day per your program — keep it. Push back to baseline Monday.
+      </div>
+    </div>
+
+    <!-- Today card with readiness + agenda -->
+    <div class="card today-card">
+      <div class="today-readiness">
+        <div class="ring">
+          <div class="ring-inner">78</div>
+        </div>
+        <div class="today-meta">
+          <div class="title">Ready to perform</div>
+          <div class="sub">Via Oura Ring</div>
+        </div>
+      </div>
+      <div class="agenda-list">
+        <div class="agenda-item done">
+          <div class="agenda-check done"><span class="mdi mdi-check"></span></div>
+          <div class="agenda-body">
+            <div class="label">Weigh in</div>
+            <div class="meta">175.2 lb · Withings</div>
+          </div>
+        </div>
+        <div class="agenda-item done">
+          <div class="agenda-check done"><span class="mdi mdi-check"></span></div>
+          <div class="agenda-body">
+            <div class="label">Workout</div>
+            <div class="meta">Upper 1 · Completed</div>
+          </div>
+        </div>
+        <div class="agenda-item done">
+          <div class="agenda-check done"><span class="mdi mdi-check"></span></div>
+          <div class="agenda-body">
+            <div class="label">Supplements</div>
+            <div class="meta">4 / 4 taken</div>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <div class="agenda-check pending"></div>
+          <div class="agenda-body">
+            <div class="label">Progress photo</div>
+            <div class="meta">Tap to mark done</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity card (Oura-sourced) -->
+    <div class="card">
+      <div class="activity-head">
+        <div class="icon-box"><span class="mdi mdi-shoe-print"></span></div>
+        <div class="title">Activity</div>
+        <div class="source">OURA</div>
+      </div>
+      <div class="activity-stats">
+        <div class="stat">
+          <div class="label">Steps</div>
+          <div class="value">9,247</div>
+          <div class="progress-bar"><div class="fill" style="width: 92%"></div></div>
+          <div class="delta" style="margin-top: 10px;">92% of 10K goal</div>
+        </div>
+        <div class="stat">
+          <div class="label">Active kcal</div>
+          <div class="value">612</div>
+          <div class="progress-bar"><div class="fill" style="width: 78%"></div></div>
+          <div class="delta" style="margin-top: 10px;">+48 vs avg</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab bar -->
+  <div class="tab-bar">
+    <div class="tab active"><span class="mdi mdi-home icon"></span></div>
+    <div class="tab"><span class="mdi mdi-dumbbell icon"></span></div>
+    <div class="tab"><span class="mdi mdi-pill icon"></span></div>
+    <div class="tab"><span class="mdi mdi-flask-outline icon"></span></div>
+    <div class="tab"><span class="mdi mdi-whistle-outline icon"></span></div>
+    <div class="tab"><span class="mdi mdi-cog-outline icon"></span></div>
+  </div>
+</div>
+</body>
+</html>

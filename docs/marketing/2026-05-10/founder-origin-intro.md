@@ -93,9 +93,11 @@ Follow along. Android is first. More shipping weekly.
 
 ## 2. LinkedIn Post
 
-Target: 150-220 words. Founder-personal voice, slightly more credibility framing
-than the X thread. No employer named; "fintech background" is the safe ceiling per
-legal-ops OBA boundary.
+Target: 150-220 words. Founder-personal voice. No employer reference per legal-ops
+OBA self-block rule (Marketing README: "Robinhood / employer reference | Self-block
+per OBA boundary"). The original draft had a "fintech operator by day" line that
+indirectly surfaces the employer via Chris's profile cross-link; cleaned 2026-05-10
+per OBA disclosure audit.
 
 ---
 
@@ -107,10 +109,8 @@ the data supports a hard push or a work-up set.
 
 Seven apps. Manual correlation. Every day.
 
-I'm a fintech operator by day, which means I'm wired to notice when a process is
-all manual steps and no integration layer. At some point I stopped being surprised
-that the fitness-optimization space had this gap and started writing the app that
-filled it.
+After enough mornings of doing the same cross-check by hand, I stopped being
+surprised the integration didn't exist and started writing it.
 
 Biotica reads Oura, Withings, and Health Connect as one signal. The AI coach
 answers your training questions grounded in your actual data, not generic advice.
@@ -127,7 +127,7 @@ from here.
 
 ---
 
-Word count: 193. Within the 150-220 target.
+Word count: 184. Within the 150-220 target.
 
 ---
 
