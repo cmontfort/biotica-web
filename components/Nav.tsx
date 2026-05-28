@@ -18,8 +18,13 @@ export default function Nav() {
           <Link href="/terms" className="hover:text-white transition-colors">
             Terms
           </Link>
+          {/* Root-relative anchor so the button works from /privacy and /terms
+              too. Same-page `#waitlist` (the prior value) was a no-op on every
+              page except `/` because those pages have no #waitlist section.
+              `/#waitlist` navigates to the home page and scrolls to the
+              section. (2026-05-27, reported by Chris.) */}
           <a
-            href="#waitlist"
+            href="/#waitlist"
             className="px-4 py-2 rounded-lg bg-primary text-background font-semibold hover:opacity-90 transition-opacity text-sm"
           >
             Join Waitlist
