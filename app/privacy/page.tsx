@@ -8,7 +8,7 @@ export default function Privacy() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-20 prose prose-invert prose-zinc">
       <h1>Privacy Policy</h1>
-      <p className="text-muted-fg text-sm">Last updated: May 9, 2026</p>
+      <p className="text-muted-fg text-sm">Last updated: June 3, 2026</p>
 
       <p>
         Biotica LLC, a Massachusetts limited liability company (&quot;Biotica,&quot; &quot;we,&quot; &quot;us,&quot; or
@@ -32,7 +32,7 @@ export default function Privacy() {
         <li><strong>Body composition</strong> — weight, body fat percentage, muscle mass, hydration (from Withings)</li>
         <li><strong>Activity data</strong> — steps, active calories (from Android Health Connect)</li>
         <li><strong>Workout data</strong> — exercises, sets, reps, weights logged within the App</li>
-        <li><strong>Supplement data</strong> — supplement names, dosages, and timing you log manually</li>
+        <li><strong>Supplement data</strong> — supplement names, dosages, frequency, timing schedules, and per-dose adherence records you log manually</li>
       </ul>
 
       <h3>Usage Data</h3>
@@ -78,7 +78,8 @@ export default function Privacy() {
           <strong>Anthropic (Claude API)</strong> — powers AI coaching features. When you use the AI coach
           (including the coaching Q&amp;A and AI workout programming), we send a prompt to Anthropic&apos;s API
           that includes: your sleep score, HRV, readiness score, resting heart rate, body weight, body fat
-          percentage, lean mass, step count, active calories, supplement names and dosages, recent workout
+          percentage, lean mass, step count, active calories, supplement names, dosages, adherence records
+          (whether each supplement was taken on each due night), and regimen schedule labels, recent workout
           history (exercises, sets, reps, weights), and your coaching question along with recent conversation
           history. Anthropic processes this prompt and returns a response. Anthropic does not use your data
           to train their models. Per Anthropic&apos;s standard API terms, prompts and responses may be retained
