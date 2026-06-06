@@ -273,13 +273,38 @@ If Path 2 also fails: Path 1 (Meta Verified) is the escape hatch — pay the $22
 |---|---|
 | Display name | Biotica |
 | Handle | @biotica_app |
-| Bio | "Train with data. Recover with purpose. AI coaching grounded in your actual biometrics, not generic advice. biotica.app" |
+| Bio | "Train with data. Recover with purpose. AI coaching grounded in your actual biometrics, not generic advice. biotica.app" (STALE — see finalized bio below, READY TO POST) |
 | Category | Mobile Application |
 | Email | social@biotica.app |
 | Profile photo | Biotica B mark with heartbeat (set) |
 | Header | Uploaded |
 | Location | Not set (intentional — brand accounts often skip) |
 | Birth date | Set to private |
+| Website field | biotica.app (separate from bio field) |
+
+### Finalized bio — READY TO POST (Chris hands, 2026-06-06)
+
+**Bio text (139 chars, fits X 160-char limit):**
+
+> Solo dev. Built the app I wished existed. Oura + Withings + Health Connect in one AI coaching loop. 7 apps deep, now one. Android beta Aug.
+
+**Website field (separate X field, not counted against bio):** biotica.app
+
+**Rationale:** founder-forward (solo dev, personal origin), connective-tissue hook (7 apps deep), integration stack named explicitly, Android beta Aug timeline. Cold visitor arriving from a Huberman or WHOOP reply knows who this is and what it is in one read.
+
+### Finalized pinned tweet — READY TO POST (Chris hands, 2026-06-06)
+
+**Chosen option: Option 1 (V2 updated) — see full assets in marketing agent output 2026-06-06.**
+
+**Pinned tweet text (Option 1, 267 chars):**
+
+> Optimization stack was seven apps deep. None of them talked to each other.
+>
+> So I built the one I wished existed. Biotica reads Oura, Withings, and Health Connect as one signal. AI coach tells you what your data actually means.
+>
+> Solo dev. Android beta Aug. biotica.app
+
+**Status:** bio + pinned tweet approved by Chris 2026-06-06. Pending Chris hands to post.
 
 ### Hardening checklist
 
