@@ -8,7 +8,7 @@ export default function Terms() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-20 prose prose-invert prose-zinc">
       <h1>Terms of Service</h1>
-      <p className="text-muted-fg text-sm">Last updated: May 9, 2026</p>
+      <p className="text-muted-fg text-sm">Last updated: June 6, 2026</p>
 
       <h2>1. Acceptance of Terms</h2>
       <p>
@@ -66,6 +66,20 @@ export default function Terms() {
         By subscribing, you authorize recurring charges to your selected payment method. You may cancel at
         any time through your device&apos;s platform subscription management; cancellation takes effect at
         the end of the current billing period.
+      </p>
+      <p>
+        <strong>Free trials and promotional offer codes:</strong> Biotica may offer free trials or
+        promotional periods through offer codes redeemable at the time of subscription. If you begin a free
+        trial or promotional period, your subscription will automatically convert to a paid subscription at
+        the standard or promotional price disclosed at sign-up at the end of the trial or promotional period.
+        You will be charged unless you cancel at least 24 hours before the trial or promotional period ends
+        (for Apple App Store subscriptions) or before the renewal date (for Google Play subscriptions).
+        The price and billing frequency that will apply after the trial or promotional period are displayed
+        before you confirm your subscription. You can cancel at any time before conversion through your
+        device&apos;s platform subscription management settings (Apple: Settings &rarr; Apple Account &rarr;
+        Subscriptions; Google Play: Play Store &rarr; Subscriptions). If you cancel during a free trial,
+        you retain access to the trial features until the trial ends, after which your account reverts to
+        the free tier at no charge.
       </p>
 
       <h2>6. Health Information Disclaimer</h2>
