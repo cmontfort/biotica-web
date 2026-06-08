@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { supabaseServer } from '@/lib/supabase-server';
 import { rateLimit, clientIp } from '@/lib/rate-limit';
+import { sendInvestorConfirmation, sendInvestorNotification } from '@/lib/email';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX = { name: 200, email: 254, firm: 200, focus: 2000 };
@@ -53,11 +54,20 @@ export async function POST(request: Request): Promise<NextResponse> {
     );
   }
 
-  const { error } = await supabaseServer.from('investor_contact').insert({
-    name: name.trim().slice(0, MAX.name),
+  // Strip CR/LF/NUL before any value can reach an email header (name + firm
+  // flow into the Subject; email into Reply-To). Defeats SMTP header injection
+  // at the source so every downstream consumer gets clean values. Flagged by
+  // code-reviewer + appsec 2026-06-08.
+  const stripCtrl = (s: string) => s.replace(/[\r\n\0]/g, ' ');
+  const clean = {
+    name: stripCtrl(name.trim()).slice(0, MAX.name),
     email: email.toLowerCase().trim().slice(0, MAX.email),
-    firm: firm?.trim().slice(0, MAX.firm) || null,
+    firm: firm ? stripCtrl(firm.trim()).slice(0, MAX.firm) || null : null,
     focus: focus?.trim().slice(0, MAX.focus) || null,
+  };
+
+  const { error } = await supabaseServer.from('investor_contact').insert({
+    ...clean,
     accredited_self_certified: true,
   });
 
@@ -67,6 +77,23 @@ export async function POST(request: Request): Promise<NextResponse> {
     console.error('Investor contact insert error:', error.code, error.message);
     return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
   }
+
+  // The lead is saved. Fire the branded confirmation (to submitter) and the
+  // internal notification (to legal@) as a side effect — a mail failure must
+  // NOT fail the request or lose the lead. Awaited so the serverless function
+  // doesn't get frozen mid-send, but each send swallows + logs its own error.
+  await Promise.allSettled([
+    sendInvestorConfirmation(clean.email, clean.name),
+    sendInvestorNotification(clean),
+  ]).then((results) => {
+    for (const r of results) {
+      if (r.status === 'rejected') {
+        const reason = r.reason as { message?: string; code?: string } | undefined;
+        // Name/message only — never the raw error (can carry recipient PII).
+        console.error('[connect] email send failed:', reason?.code ?? '', reason?.message ?? 'unknown');
+      }
+    }
+  });
 
   return NextResponse.json({ success: true });
 }
