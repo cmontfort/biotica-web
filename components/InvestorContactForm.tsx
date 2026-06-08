@@ -10,6 +10,7 @@ export default function InvestorContactForm() {
   const [firm, setFirm] = useState('');
   const [focus, setFocus] = useState('');
   const [accredited, setAccredited] = useState(false);
+  const [companyWebsite, setCompanyWebsite] = useState(''); // honeypot — stays empty
   const [status, setStatus] = useState<Status>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -27,7 +28,7 @@ export default function InvestorContactForm() {
       const res = await fetch('/api/connect', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, firm, focus, accredited }),
+        body: JSON.stringify({ name, email, firm, focus, accredited, company_website: companyWebsite }),
       });
       const data = await res.json();
 
@@ -63,6 +64,18 @@ export default function InvestorContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
+      {/* Honeypot — hidden from real users, bots tend to fill it. Submissions
+          with this field set are silently dropped server-side. */}
+      <input
+        type="text"
+        name="company_website"
+        value={companyWebsite}
+        onChange={(e) => setCompanyWebsite(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute left-[-9999px] h-0 w-0 opacity-0"
+      />
       <div className="flex flex-col sm:flex-row gap-4">
         <input
           type="text"

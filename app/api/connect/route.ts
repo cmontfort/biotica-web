@@ -1,10 +1,20 @@
 import { NextResponse } from 'next/server';
 import { supabaseServer } from '@/lib/supabase-server';
+import { rateLimit, clientIp } from '@/lib/rate-limit';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX = { name: 200, email: 254, firm: 200, focus: 2000 };
 
 export async function POST(request: Request): Promise<NextResponse> {
+  // Rate limit: 5 submissions / minute / IP (code-review 2026-06-08).
+  const limit = rateLimit(`connect:${clientIp(request)}`, 5, 60_000);
+  if (!limit.ok) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again in a moment.' },
+      { status: 429, headers: { 'Retry-After': String(limit.retryAfterSec) } },
+    );
+  }
+
   let body: unknown;
   try {
     body = await request.json();
@@ -12,13 +22,20 @@ export async function POST(request: Request): Promise<NextResponse> {
     return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
   }
 
-  const { name, email, firm, focus, accredited } = body as {
+  const { name, email, firm, focus, accredited, company_website } = body as {
     name?: string;
     email?: string;
     firm?: string;
     focus?: string;
     accredited?: boolean;
+    company_website?: string; // honeypot — must be empty
   };
+
+  // Honeypot: a hidden field real users never see. If a bot fills it, return a
+  // benign success without inserting (don't reveal the trap).
+  if (company_website && company_website.trim() !== '') {
+    return NextResponse.json({ success: true });
+  }
 
   if (!name || !name.trim()) {
     return NextResponse.json({ error: 'Your name is required' }, { status: 400 });
