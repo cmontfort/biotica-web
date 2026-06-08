@@ -62,7 +62,15 @@ function wordmark(): string {
     </span>`;
 }
 
-function shell(innerHtml: string): string {
+// Per-email footer line (small, muted, centered). Investor emails carry the
+// securities non-solicitation disclaimer; the waitlist email carries a normal
+// CAN-SPAM-style postal-address line. Passed in so the shell stays generic.
+const INVESTOR_FOOTER =
+  'Biotica LLC &middot; This message is an acknowledgment of your contact inquiry and does not constitute an offer to sell, nor a solicitation of an offer to buy, any securities.';
+const WAITLIST_FOOTER =
+  'Biotica LLC &middot; 82 Wendell Ave, Ste 100, Pittsfield, MA 01201 &middot; You are receiving this because you joined the waitlist at biotica.app.';
+
+function shell(innerHtml: string, footerHtml: string): string {
   return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
 <body style="margin:0;padding:0;background:${BG};">
@@ -75,7 +83,7 @@ function shell(innerHtml: string): string {
         </td></tr>
       </table>
       <p style="max-width:480px;margin:16px auto 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:${MUTED};font-size:11px;line-height:1.5;text-align:center;">
-        Biotica LLC &middot; This message is an acknowledgment of your contact inquiry and does not constitute an offer to sell, nor a solicitation of an offer to buy, any securities.
+        ${footerHtml}
       </p>
     </td></tr>
   </table>
@@ -115,7 +123,7 @@ export async function sendInvestorConfirmation(toEmail: string, name: string): P
     to: toEmail,
     replyTo: REPLY_TO,
     subject: 'Thanks for reaching out to Biotica',
-    html: shell(inner),
+    html: shell(inner, INVESTOR_FOOTER),
     text:
       `Thanks for the introduction, ${firstName}.\n\n` +
       `We received your note and someone from Biotica will be in touch. We read every message ` +
@@ -176,10 +184,47 @@ export async function sendInvestorNotification(submission: {
     to: NOTIFY_TO,
     replyTo: email,
     subject: `New investor intro — ${subjName}${subjFirm}`,
-    html: shell(inner),
+    html: shell(inner, INVESTOR_FOOTER),
     text:
       `New investor introduction (via biotica.app/connect)\n\n` +
       rows.map(([k, v]) => `${k}: ${v}`).join('\n') +
       `\n\nReply directly to ${email}.`,
+  });
+}
+
+/**
+ * Confirmation sent to someone who joins the launch waitlist. Consumer/
+ * marketing voice (not the formal investor tone). The waitlist form collects
+ * email only, so there's no name to personalize. This is a transactional
+ * confirmation of the user's own signup action; the footer carries the postal
+ * address per CAN-SPAM good practice.
+ */
+export async function sendWaitlistConfirmation(toEmail: string): Promise<void> {
+  const transport = getTransport();
+  if (!transport) {
+    console.error('[email] SMTP not configured — skipping waitlist confirmation send');
+    return;
+  }
+  const inner = `
+    <p style="margin:0 0 16px;font-size:18px;font-weight:600;">You're on the list.</p>
+    <p style="margin:0 0 16px;color:${MUTED};">
+      Thanks for joining the Biotica waitlist. We'll let you know the moment we launch on Android in 2026.
+    </p>
+    <p style="margin:0;color:${MUTED};">
+      We'll send one email when we launch. That's it.
+    </p>`;
+  await transport.sendMail({
+    from: EMAIL_FROM,
+    to: toEmail,
+    replyTo: REPLY_TO,
+    subject: "You're on the list.",
+    html: shell(inner, WAITLIST_FOOTER),
+    text:
+      `You're on the list.\n\n` +
+      `Thanks for joining the Biotica waitlist. We'll let you know the moment we launch on ` +
+      `Android in 2026.\n\n` +
+      `We'll send one email when we launch. That's it.\n\n` +
+      `Biotica LLC. 82 Wendell Ave, Ste 100, Pittsfield, MA 01201. You are receiving this because ` +
+      `you joined the waitlist at biotica.app.`,
   });
 }
