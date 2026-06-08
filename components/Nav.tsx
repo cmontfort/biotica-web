@@ -27,6 +27,9 @@ export default function Nav() {
           </span>
         </Link>
         <div className="flex items-center gap-6 text-sm text-muted-fg">
+          <Link href="/connect" className="hover:text-white transition-colors">
+            Connect
+          </Link>
           <Link href="/privacy" className="hover:text-white transition-colors">
             Privacy
           </Link>
