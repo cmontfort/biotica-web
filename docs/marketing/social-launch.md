@@ -4,7 +4,7 @@ Operational log tracking the work to spin up Biotica's social presence.
 Companion to `roadmap.md`, `voice-examples.md`, `biotica-brand.md` in the
 marketing project knowledge.
 
-Last updated: 2026-05-19 (LinkedIn 2026-05-19 analytics export logged — May 16 post at 3 days: 1,139 impressions / 22 biotica.app clicks; first Biotica company-page export logged — ~70 impressions lifetime, functionally inert; X analytics export pending; marketing-agent channel read — 100% personal-account effort pre-launch)
+Last updated: 2026-06-11 (X analytics 2026-05-15 to 2026-06-11 ingested — 56 posts / 5,560 impressions / 41 engagements / 0 follows / 0 URL clicks; LinkedIn aggregate same window — 7,306 impressions / 2,749 reached / 37 new followers; full analysis in x-analytics-2026-05-15-2026-06-11.md)
 
 ---
 
@@ -27,6 +27,7 @@ Running log of organic channel actions, drops, and results. Append entries; do n
 | 2026-05-17 | X (@biotica_app) | Reply to @BioLayne | Reply URL: https://x.com/biotica_app/status/2056020852999643518 (posted 14:35 UTC). Thread: https://x.com/BioLayne/status/2054964283881001404 (Layne: "The REAL biohacks are unbelievably simple: Lift hard. Eat enough protein. Eat enough fiber. Manage calories. Repeat for years. That's it. But that's harder to monetize because it is simple but requires actual discipline." — 131 likes, 12 RTs, 3 days old, mid-promo-thread but the individual tweet is substantive). Reply (277 chars, shipped verbatim from draft): "The cost of biohacking is not the hydrogen water. It is the attention. The interventions that move actual outcomes in my data are mostly free: consistent sleep timing, training adherence, protein at threshold. Most biohacking lives in the gap between effort and signal." | Engagement pending. Chris declined the levelsio cold-bedroom recommendation; went with BioLayne instead — audience targeting note: Layne's audience is allergic to upsell, value here is brand-warmth not waitlist conversion. 2 of 3-5 daily replies shipped (Lugavere round 2 + BioLayne). Check impressions in 48h. |
 | 2026-05-18 | X (@biotica_app) | Reply to @maxlugavere (muscle metabolism / RMR post) | Thread: https://x.com/maxlugavere/status/2055777837324673425. Reply (264 chars): "RMR and TDEE estimates diverge most during cuts and reverse diets. What I find useful: tracking lean mass change alongside caloric intake over 4 to 6 week blocks. When LBM holds but weight stalls, the math changes. Most people only see the weight number." On-voice because it lands the personalization-vs-population-average frame Biotica is building: individual LBM-tracked data tells a different story than a generic TDEE estimate. No name-drop, no promotional language, no medical claim. | Engagement pending. Second on-voice X reply this session (first was the keyword-matched Lugavere tadalafil candidate already in repliedToIds dedup). Third X engagement today counting the two LinkedIn comment replies. Variant added to globalVariants in scripts/x-targets.json so this class of post auto-surfaces from any account in the rotation going forward. repliedToIds auto-populates via fetchBioticaRepliedIds on tomorrow's scan once Chris posts — no manual write needed. |
 | 2026-05-19 | LinkedIn (personal + company page) | Analytics export logged — May 16 post 3-day metrics + first Biotica company-page export | 2026-05-19 LinkedIn exports (personal PostAnalytics + company-page metrics file). May 16 "I lost 45 lbs" post measured at 3 days post-publish; first full company-page data pull. | **May 16 post — 3-day export:** 1,139 impressions / 651 reached / 24 reactions / 4 comments / 0 reposts/saves/sends / 22 visits to biotica.app / 25 profile views / 1 follower gained. Progression 726 (05-17, 24h) → 853 (05-18) → 1,139 (05-19, 3d) — post kept accumulating engagement. Audience skew holds: Robinhood 21.5% / Google 7.2% / Apple 1.4%; SF Bay 19% / NYC 16.7% / Boston 8.6%; Senior 33% + Manager 17% + Director 15% + VP 5%. **Biotica company page (lifetime, first export):** 1 post total, ~70 impressions across its entire life / 3 link clicks / 0 reactions / 0 comments / 0 followers — functionally inert. **X analytics export: PENDING** — no agent-side X analytics tool; Chris to export from analytics.x.com separately. **Marketing-agent channel read (2026-05-19):** 100% personal-account effort pre-launch, zero original company-page content (re-share only when a personal post clears 500+ impressions); audience skew is warm-network waitlist-seeding, not core ICP (ICP acquisition = X replies + Reddit); low follower-conversion is structural (CTA points to product, not account) — no action. Timing fix carried: post Sun 7-8pm ET or Tue-Thu 10am ET, not Saturday. |
+| 2026-06-11 | X (@biotica_app) | X analytics export ingested — 2026-05-15 to 2026-06-11 (56 posts, 28-day window) | Three export files ingested. Full detail: docs/marketing/x-analytics-2026-05-15-2026-06-11.md | **X 28-day totals:** 56 posts / 5,560 impressions / 41 engagements / 10 profile visits / 0 new follows / 0 URL clicks. **Top accounts by avg impression:** @SquatUniversity 239 avg / @hubermanlab 231 avg / @bryan_johnson 177 avg / @thegarybrecka 138 avg. **Best single posts:** @hubermanlab GLP-muscle post (834 imp), @thegarybrecka ApoB panel post (569 imp), @bryan_johnson deep sleep onset (525 imp), @hubermanlab peptides+sleep (513 imp), @SquatUniversity kettlebell HR recovery (440 imp). **Standalone product posts: underperformed badly** — Jun 6 pinned tweet standalone = 11 impressions, May 26 product announcement = 38 impressions. **Zero follows, zero URL clicks over 28 days.** Reply strategy builds impressions (some posts >400) but is not converting to follows or profile visits at any measurable rate. **Content angle leaders by avg impression:** lab/biomarkers 160 avg, training/form 132 avg, body-comp 130 avg. Sleep/HRV posts are the most published (31 of 56) but drag the avg to 82 due to many sub-20 posts. Longevity/aging angle (Sinclair, Rhonda Patrick) weak — 27 avg, 0 engagements. **LinkedIn same window (personal):** 7,306 impressions / 2,749 reached / 37 new followers / audience Senior 38% + Director 13% + Manager 11% = 62% decision-makers / peak day Jun 1 (1,553 imp). Top LinkedIn posts: May 31 magnesium/sleep 2,233 imp, May 16 data/fitness 1,716 imp. Company page inert (1 post, 1 impression). |
 
 **Note on X telemetry discrepancy:** The LinkedIn analytics export filename (`biotica-app_content_*.xls`) is mislabeled — the sheet headers say "LinkedIn" and the data is LinkedIn's aggregated metrics view. Actual X numbers for the May 10 post per X native analytics: 10 impressions / 2 engagements (consistent with the warm-up phase interpretation — follower-only reach).
 
@@ -273,7 +274,7 @@ If Path 2 also fails: Path 1 (Meta Verified) is the escape hatch — pay the $22
 |---|---|
 | Display name | Biotica |
 | Handle | @biotica_app |
-| Bio | "Train with data. Recover with purpose. AI coaching grounded in your actual biometrics, not generic advice. biotica.app" (STALE — see finalized bio below, READY TO POST) |
+| Bio | "Solo dev. Built the app I wished existed. Oura + Withings + Health Connect in one AI coaching loop. 7 apps deep, now one. Android beta Aug." (LIVE — updated by Chris 2026-06-06; 139 chars) |
 | Category | Mobile Application |
 | Email | social@biotica.app |
 | Profile photo | Biotica B mark with heartbeat (set) |
@@ -282,7 +283,7 @@ If Path 2 also fails: Path 1 (Meta Verified) is the escape hatch — pay the $22
 | Birth date | Set to private |
 | Website field | biotica.app (separate from bio field) |
 
-### Finalized bio — READY TO POST (Chris hands, 2026-06-06)
+### Finalized bio — ✅ LIVE (Chris updated 2026-06-06)
 
 **Bio text (139 chars, fits X 160-char limit):**
 
@@ -292,7 +293,7 @@ If Path 2 also fails: Path 1 (Meta Verified) is the escape hatch — pay the $22
 
 **Rationale:** founder-forward (solo dev, personal origin), connective-tissue hook (7 apps deep), integration stack named explicitly, Android beta Aug timeline. Cold visitor arriving from a Huberman or WHOOP reply knows who this is and what it is in one read.
 
-### Finalized pinned tweet — READY TO POST (Chris hands, 2026-06-06)
+### Finalized pinned tweet — ✅ LIVE / PINNED (Chris pinned Option 1, 2026-06-06)
 
 **Chosen option: Option 1 (V2 updated) — see full assets in marketing agent output 2026-06-06.**
 
@@ -304,7 +305,7 @@ If Path 2 also fails: Path 1 (Meta Verified) is the escape hatch — pay the $22
 >
 > Solo dev. Android beta Aug. biotica.app
 
-**Status:** bio + pinned tweet approved by Chris 2026-06-06. Pending Chris hands to post.
+**Status:** ✅ DONE — bio updated and Option 1 pinned by Chris 2026-06-06. The profile now reads as a founder/product account; the next X reply batch lands on a profile worth following. Watch: re-pull account analytics in ~2-3 weeks to measure whether profile-visit / follow conversion lifts off the structural zero.
 
 ### Hardening checklist
 
