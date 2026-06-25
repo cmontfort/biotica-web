@@ -66,6 +66,14 @@ export default function WaitlistForm() {
           {status === 'loading' ? 'Joining...' : 'Join Waitlist'}
         </button>
       </div>
+      <p className="text-xs text-muted-fg text-center">
+        By joining you agree to receive our launch announcement and occasional product updates.
+        Unsubscribe anytime.{' '}
+        <a href="/privacy" className="underline hover:text-primary transition-colors">
+          Privacy Policy
+        </a>
+        .
+      </p>
       {(status === 'error' || status === 'duplicate') && (
         <p className="text-sm text-red-400">{errorMessage}</p>
       )}

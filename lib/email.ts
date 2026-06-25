@@ -47,7 +47,7 @@ function getTransport(): Transporter | null {
   return cached;
 }
 
-function escapeHtml(s: string): string {
+export function escapeHtml(s: string): string {
   return s
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -70,7 +70,7 @@ const INVESTOR_FOOTER =
 const WAITLIST_FOOTER =
   'Biotica LLC &middot; 82 Wendell Ave, Ste 100, Pittsfield, MA 01201 &middot; You are receiving this because you joined the waitlist at biotica.app.';
 
-function shell(innerHtml: string, footerHtml: string): string {
+export function shell(innerHtml: string, footerHtml: string): string {
   return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
 <body style="margin:0;padding:0;background:${BG};">
@@ -208,22 +208,36 @@ export async function sendWaitlistConfirmation(toEmail: string): Promise<void> {
   const inner = `
     <p style="margin:0 0 16px;font-size:18px;font-weight:600;">You're on the list.</p>
     <p style="margin:0 0 16px;color:${MUTED};">
-      Thanks for joining the Biotica waitlist. We'll let you know the moment we launch on Android in 2026.
+      Thanks for joining the Biotica waitlist. You'll get an email the moment we launch on Android,
+      plus occasional updates as we ship new features and integrations.
     </p>
-    <p style="margin:0;color:${MUTED};">
-      We'll send one email when we launch. That's it.
+    <p style="margin:0 0 16px;color:${MUTED};">
+      We won't flood your inbox. Every email we send includes an unsubscribe link, and you can
+      opt out anytime by replying to any message or writing to
+      <a href="mailto:privacy@biotica.app" style="color:${PRIMARY};text-decoration:none;">privacy@biotica.app</a>.
+    </p>
+    <p style="margin:0;color:${MUTED};font-size:13px;">
+      Questions? Reply to this email or reach us at
+      <a href="mailto:privacy@biotica.app" style="color:${PRIMARY};text-decoration:none;">privacy@biotica.app</a>.
     </p>`;
   await transport.sendMail({
     from: EMAIL_FROM,
     to: toEmail,
     replyTo: REPLY_TO,
+    headers: {
+      // One-click unsubscribe header so mail clients surface an Unsubscribe
+      // affordance; the body also offers reply-to-unsubscribe. (privacy 2026-06-25)
+      'List-Unsubscribe': '<mailto:privacy@biotica.app?subject=unsubscribe>',
+    },
     subject: "You're on the list.",
     html: shell(inner, WAITLIST_FOOTER),
     text:
       `You're on the list.\n\n` +
-      `Thanks for joining the Biotica waitlist. We'll let you know the moment we launch on ` +
-      `Android in 2026.\n\n` +
-      `We'll send one email when we launch. That's it.\n\n` +
+      `Thanks for joining the Biotica waitlist. You'll get an email the moment we launch on ` +
+      `Android, plus occasional updates as we ship new features and integrations.\n\n` +
+      `We won't flood your inbox. Every email includes an unsubscribe link, and you can ` +
+      `opt out anytime by replying to any message or writing to privacy@biotica.app.\n\n` +
+      `Questions? Reply to this email or reach us at privacy@biotica.app.\n\n` +
       `Biotica LLC. 82 Wendell Ave, Ste 100, Pittsfield, MA 01201. You are receiving this because ` +
       `you joined the waitlist at biotica.app.`,
   });

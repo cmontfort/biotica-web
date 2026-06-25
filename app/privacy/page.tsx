@@ -8,7 +8,7 @@ export default function Privacy() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-20 prose prose-invert prose-zinc">
       <h1>Privacy Policy</h1>
-      <p className="text-muted-fg text-sm">Last updated: June 3, 2026</p>
+      <p className="text-muted-fg text-sm">Last updated: June 25, 2026</p>
 
       <p>
         Biotica LLC, a Massachusetts limited liability company (&quot;Biotica,&quot; &quot;we,&quot; &quot;us,&quot; or
@@ -30,9 +30,11 @@ export default function Privacy() {
       <ul>
         <li><strong>Sleep data</strong> — sleep score, HRV, readiness score, resting heart rate, sleep stages (from Oura Ring)</li>
         <li><strong>Body composition</strong> — weight, body fat percentage, muscle mass, hydration (from Withings)</li>
-        <li><strong>Activity data</strong> — steps, active calories (from Android Health Connect)</li>
+        <li><strong>Activity data (Android Health Connect)</strong> — steps, active calories from Android Health Connect</li>
+        <li><strong>Apple Health data (iOS)</strong> — workouts and activity energy from Apple Health, and any data other apps (such as Whoop, Garmin, Peloton, or Strava) have written to Apple Health on your device. Apple Health is an aggregator: connecting it shares with Biotica data that those third-party apps wrote to Apple Health directly, even though Biotica has no direct relationship with those apps. Biotica reads from Apple Health only and never writes back to it.</li>
         <li><strong>Workout data</strong> — exercises, sets, reps, weights logged within the App</li>
-        <li><strong>Supplement data</strong> — supplement names, dosages, frequency, timing schedules, and per-dose adherence records you log manually</li>
+        <li><strong>Activity data from Strava</strong> — workout activities and related metrics synced from your Strava account when you connect the Strava integration</li>
+        <li><strong>Supplement data</strong> — supplement names, dosages, frequency, timing schedules, and per-dose adherence records you log manually, as well as on-hand inventory quantities, reorder thresholds, and stock-tracking records if you use the supplement inventory feature</li>
       </ul>
 
       <h3>Usage Data</h3>
@@ -54,7 +56,8 @@ export default function Privacy() {
         <li>Generate personalized AI-powered workout programs and performance insights</li>
         <li>Provide AI coaching responses — your biometric data is included in prompts sent to Anthropic&apos;s API. See Section 3 for detail on what is sent.</li>
         <li>Track your supplement protocol and correlate it with your biometric trends</li>
-        <li>Send transactional emails (account verification, password reset)</li>
+        <li>Send transactional emails (account verification, password reset, account activity notifications)</li>
+        <li>Send product-update emails — launch announcements and occasional updates about new features, integrations, and improvements. We send these only with your consent, and you can unsubscribe at any time from any email we send. See the Communications section below.</li>
         <li>Improve and debug the App through aggregated, anonymized analytics</li>
         <li>Comply with legal obligations</li>
       </ul>
@@ -63,12 +66,28 @@ export default function Privacy() {
         your health data for advertising purposes.
       </p>
 
+      <h3>Communications and Marketing Emails</h3>
+      <p>
+        If you join our waitlist or otherwise provide your email address, you are consenting to receive
+        our launch announcement and occasional product-update emails about Biotica features,
+        integrations, and improvements. The lawful basis for this processing is your consent. We use
+        Google Workspace to deliver email from noreply@biotica.app; Google receives your email address
+        for the sole purpose of delivering messages we send. See{' '}
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google&apos;s Privacy Policy</a>.
+        Every marketing or product-update email we send includes an unsubscribe link. You can
+        also opt out at any time by emailing{' '}
+        <a href="mailto:privacy@biotica.app">privacy@biotica.app</a>. Unsubscribing does not affect
+        transactional emails related to your account (verification, password reset, account activity).
+      </p>
+
       <h2>3. Third-Party Services</h2>
       <p>Biotica integrates with the following third-party services when you choose to connect them:</p>
       <ul>
         <li><strong>Oura Ring</strong> — sleep, HRV, and readiness data via Oura Cloud API. Governed by <a href="https://ouraring.com/privacy-policy" target="_blank" rel="noopener noreferrer">Oura&apos;s Privacy Policy</a>.</li>
         <li><strong>Withings</strong> — body composition data via Withings Health API. Governed by <a href="https://www.withings.com/us/en/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Withings&apos; Privacy Policy</a>.</li>
-        <li><strong>Android Health Connect</strong> — steps and activity data stored locally on your Android device. No data is sent to Google through Biotica.</li>
+        <li><strong>Android Health Connect</strong> — steps and activity data from Android Health Connect. When you connect Health Connect, this data is synced to Biotica&apos;s servers. Biotica does not send any of your data to Google.</li>
+        <li><strong>Apple Health (iOS)</strong> — workouts, activity energy, and, in future updates, additional health categories (sleep, heart metrics, body composition) from Apple Health via Apple HealthKit. Apple Health is an aggregator: it may contain data written by other apps on your device. When you connect Apple Health, Biotica reads whatever data you authorize; it does not write back to Apple Health. Governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple&apos;s Privacy Policy</a>.</li>
+        <li><strong>Strava</strong> — workout activities and related metrics via the Strava API when you connect the Strava integration. Governed by <a href="https://www.strava.com/legal/privacy" target="_blank" rel="noopener noreferrer">Strava&apos;s Privacy Policy</a>.</li>
       </ul>
       <p>We also use the following infrastructure providers:</p>
       <ul>
@@ -112,6 +131,12 @@ export default function Privacy() {
         <li>Use your individually identifiable health data to train AI models without your explicit consent</li>
       </ul>
       <p>
+        If you connect Apple Health on iOS, the data Biotica reads may include health and fitness data
+        that other apps (such as Whoop, Garmin, Peloton, or Strava) originally wrote to Apple Health.
+        Biotica applies the same protections to that data as it does to all other health data collected
+        through the App. Biotica reads from Apple Health only; it does not write any data back.
+      </p>
+      <p>
         <strong>Biotica is not a HIPAA-covered entity and does not provide healthcare services.</strong> The
         App is a personal fitness and wellness tool. Please do not use Biotica as a substitute for
         professional medical care.
@@ -138,7 +163,7 @@ export default function Privacy() {
         <li><strong>Correct</strong> inaccurate data through the App settings</li>
         <li><strong>Delete</strong> your account and all associated data (Settings → Delete Account)</li>
         <li><strong>Disconnect</strong> third-party integrations at any time (Settings → Connected Integrations)</li>
-        <li><strong>Opt out</strong> of non-essential communications by updating notification preferences</li>
+        <li><strong>Opt out</strong> of non-essential communications by updating notification preferences in the App, or unsubscribe from marketing and product-update emails at any time using the unsubscribe link in any email we send or by contacting <a href="mailto:privacy@biotica.app">privacy@biotica.app</a></li>
       </ul>
       <p>
         California residents have additional rights under the CCPA, including the right to know what personal
