@@ -93,9 +93,17 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
+  // The email carries an Android beta invite. --send requires the live Play
+  // closed-track opt-in URL; dry-run uses a visible placeholder so the preview works.
+  const betaUrl = process.env.BETA_OPTIN_URL || 'https://play.google.com/PLACEHOLDER-set-BETA_OPTIN_URL';
+  if (doSend && !process.env.BETA_OPTIN_URL) {
+    console.error('[campaign] BETA_OPTIN_URL not set — the email contains an Android beta invite. Set the Play closed-track opt-in URL before --send. Aborting.');
+    process.exit(1);
+  }
+
   const messages = recipients.map((r) => {
     const unsubscribeUrl = `${UNSUB_BASE}?token=${r.unsubscribe_token}`;
-    const vars = { first_name: firstName(r.name), unsubscribe_url: unsubscribeUrl };
+    const vars = { first_name: firstName(r.name), unsubscribe_url: unsubscribeUrl, beta_url: betaUrl };
     return {
       from: FROM,
       to: r.email,
@@ -122,7 +130,7 @@ async function main(): Promise<void> {
 
   if (args.has('--sample')) {
     // Render with a SYNTHETIC recipient so no real address or live token lands in /tmp.
-    const sampleHtml = render(htmlTemplate, { first_name: 'there', unsubscribe_url: `${UNSUB_BASE}?token=SAMPLE` });
+    const sampleHtml = render(htmlTemplate, { first_name: 'there', unsubscribe_url: `${UNSUB_BASE}?token=SAMPLE`, beta_url: betaUrl });
     writeFileSync('/tmp/reconsent-sample.html', sampleHtml);
     console.log(`\n  Wrote a rendered sample (synthetic recipient) to /tmp/reconsent-sample.html. Open it to eyeball.`);
   }

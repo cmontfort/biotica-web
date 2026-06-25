@@ -6,7 +6,9 @@ I've been building Biotica solo since April 2026. The premise hasn't changed: mo
 
 Here's where things stand. The app reads your Oura Ring, Withings scale, and Android Health Connect as a single source, with the dashboard showing which device each metric came from and flagging when two sources disagree. Apple Health is coming with the iOS launch. The AI coach already answers training questions grounded in your actual biometric data, writes workout programs tailored to your goal and equipment, gives Elite members per-set coaching notes during a session, and generates weekly insight briefs. There's mid-workout exercise swap when a machine is taken, photo-based body composition commentary, and supplement tracking with inventory and reminders. That's what's live today.
 
-Given that you're still on the list, I plan to keep sending occasional updates as the app gets closer to launch. Nothing high-volume, just the things worth knowing.
+Want in before launch? I'm opening a small private Android beta ahead of the public launch, and I'd like you in it. If you have an Android phone and a Google account, you can install Biotica and start using it now. It's an early build, so you'll see some rough edges, and your feedback shapes what ships. Join here: {{beta_url}}
+
+Whether or not you jump into the beta, since you're still on the list I plan to keep sending occasional updates as the app gets closer to launch. Nothing high-volume, just the things worth knowing.
 
 If you'd rather not hear from me until launch, or at all, just open this link and I'll take you off the list immediately, no questions: {{unsubscribe_url}}. No action needed to stay on.
 
