@@ -33,8 +33,8 @@ for (const file of ['.env.local', '.env']) {
 }
 
 const SUBJECT = 'A quick update from the Biotica waitlist';
-const FROM = process.env.RESEND_FROM || 'Chris at Biotica <hello@biotica.app>';
-const REPLY_TO = process.env.EMAIL_REPLY_TO || 'privacy@biotica.app';
+const FROM = process.env.RESEND_FROM || 'Chris at Biotica <chris@biotica.app>';
+const REPLY_TO = process.env.EMAIL_REPLY_TO || 'chris@biotica.app';
 const UNSUB_BASE = 'https://biotica.app/api/unsubscribe';
 
 const htmlTemplate = readFileSync(join(__dirname, '../emails/reconsent-2026-06-25.html'), 'utf8');
@@ -84,7 +84,7 @@ async function main(): Promise<void> {
       process.exit(1);
     }
     const betaUrl = process.env.BETA_OPTIN_URL || 'https://play.google.com/PLACEHOLDER-set-BETA_OPTIN_URL';
-    const testFrom = process.env.RESEND_TEST_FROM || 'Biotica <onboarding@resend.dev>';
+    const testFrom = process.env.RESEND_TEST_FROM || FROM;
     const vars = { first_name: 'Chris', unsubscribe_url: `${UNSUB_BASE}?token=TEST`, beta_url: betaUrl };
     const { Resend } = await import('resend');
     const resend = new Resend(process.env.RESEND_API_KEY);
