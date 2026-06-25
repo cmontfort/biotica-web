@@ -26,11 +26,31 @@ export async function POST(request: Request): Promise<NextResponse> {
 
   if (error) {
     if (error.code === '23505') {
-      // Already on the list — do NOT re-send the confirmation (no insert happened).
-      return NextResponse.json(
-        { error: "You're already on the list!" },
-        { status: 409 }
-      );
+      // Already on the list. A fresh signup from someone who had unsubscribed is a
+      // deliberate re-opt-in — clear the opt-out (db-architect 2026-06-25) and
+      // re-send the confirmation. If they were already active, it's a no-op and we
+      // tell them so. The unsubscribe token is left unchanged (still valid).
+      const { data: reactivated, error: reErr } = await supabaseServer
+        .from('waitlist')
+        .update({ unsubscribed_at: null, name: name?.trim() ?? null })
+        .eq('email', cleanEmail)
+        .not('unsubscribed_at', 'is', null)
+        .select('id');
+
+      if (reErr) {
+        console.error('Waitlist re-opt-in error:', reErr.code, reErr.message);
+        return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
+      }
+
+      if (reactivated && reactivated.length > 0) {
+        await sendWaitlistConfirmation(cleanEmail).catch((e: { code?: string; message?: string }) => {
+          console.error('[waitlist] confirmation email failed:', e?.code ?? '', e?.message ?? 'unknown');
+        });
+        return NextResponse.json({ success: true });
+      }
+
+      // Already an active subscriber — nothing to do.
+      return NextResponse.json({ error: "You're already on the list!" }, { status: 409 });
     }
     // Code + message only — never the raw error object (can echo submitter PII
     // into Vercel logs). Mirrors the /api/connect logging rule (code-review 2026-06-08).
