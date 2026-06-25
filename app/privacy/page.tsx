@@ -33,7 +33,6 @@ export default function Privacy() {
         <li><strong>Activity data (Android Health Connect)</strong> — steps, active calories from Android Health Connect</li>
         <li><strong>Apple Health data (iOS)</strong> — workouts and activity energy from Apple Health, and any data other apps (such as Whoop, Garmin, Peloton, or Strava) have written to Apple Health on your device. Apple Health is an aggregator: connecting it shares with Biotica data that those third-party apps wrote to Apple Health directly, even though Biotica has no direct relationship with those apps. Biotica reads from Apple Health only and never writes back to it.</li>
         <li><strong>Workout data</strong> — exercises, sets, reps, weights logged within the App</li>
-        <li><strong>Activity data from Strava</strong> — workout activities and related metrics synced from your Strava account when you connect the Strava integration</li>
         <li><strong>Supplement data</strong> — supplement names, dosages, frequency, timing schedules, and per-dose adherence records you log manually, as well as on-hand inventory quantities, reorder thresholds, and stock-tracking records if you use the supplement inventory feature</li>
       </ul>
 
@@ -87,7 +86,6 @@ export default function Privacy() {
         <li><strong>Withings</strong> — body composition data via Withings Health API. Governed by <a href="https://www.withings.com/us/en/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Withings&apos; Privacy Policy</a>.</li>
         <li><strong>Android Health Connect</strong> — steps and activity data from Android Health Connect. When you connect Health Connect, this data is synced to Biotica&apos;s servers. Biotica does not send any of your data to Google.</li>
         <li><strong>Apple Health (iOS)</strong> — workouts, activity energy, and, in future updates, additional health categories (sleep, heart metrics, body composition) from Apple Health via Apple HealthKit. Apple Health is an aggregator: it may contain data written by other apps on your device. When you connect Apple Health, Biotica reads whatever data you authorize; it does not write back to Apple Health. Governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple&apos;s Privacy Policy</a>.</li>
-        <li><strong>Strava</strong> — workout activities and related metrics via the Strava API when you connect the Strava integration. Governed by <a href="https://www.strava.com/legal/privacy" target="_blank" rel="noopener noreferrer">Strava&apos;s Privacy Policy</a>.</li>
       </ul>
       <p>We also use the following infrastructure providers:</p>
       <ul>
