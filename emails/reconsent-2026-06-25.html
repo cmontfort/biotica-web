@@ -1,0 +1,118 @@
+<!--
+  Biotica waitlist re-consent email — branded HTML (Resend send).
+  Brand tokens mirror biotica-web/lib/email.ts shell().
+  MERGE TOKENS (replace per send platform):
+    {{first_name}}      -> recipient first name (fallback "there")
+    {{unsubscribe_url}} -> per-recipient https://biotica.app/api/unsubscribe?token=<unsubscribe_token>
+  SCREENSHOTS: the three .screenshot slots are PLACEHOLDERS. Swap each
+    <div class="ss-ph"> for <img src="https://biotica.app/email/<name>.png" width="170" ... />
+    once real Android captures are hosted (e.g. in biotica-web/public/email/).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>A quick update from the Biotica waitlist</title>
+</head>
+<body style="margin:0;padding:0;background:#09090B;">
+  <!-- preheader (hidden) -->
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#09090B;font-size:1px;line-height:1px;">
+    The app has come a long way since you signed up. Here's what's shipped.
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#09090B;padding:32px 16px;">
+    <tr><td align="center">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#18181B;border:1px solid #27272A;border-radius:16px;overflow:hidden;">
+
+        <!-- wordmark header -->
+        <tr><td style="padding:28px 32px 8px 32px;">
+          <span style="font-size:22px;font-weight:700;letter-spacing:-0.02em;color:#FAFAFA;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+            <span style="color:#4ADE80;">Bio</span>tica<sup style="font-size:11px;color:#A1A1AA;">&#8482;</sup>
+          </span>
+        </td></tr>
+
+        <!-- body -->
+        <tr><td style="padding:8px 32px 8px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#FAFAFA;font-size:15px;line-height:1.6;">
+
+          <p style="margin:0 0 16px;font-size:20px;font-weight:600;">A quick update from the Biotica waitlist</p>
+
+          <p style="margin:0 0 16px;color:#D4D4D8;">Hi {{first_name}},</p>
+
+          <p style="margin:0 0 16px;color:#A1A1AA;">
+            When you joined the Biotica waitlist, the signup form mentioned you'd hear from us at launch.
+            That's still the plan, and launch is coming this summer, but I wanted to reach out before then
+            because a lot has been built since you first signed up and I thought you'd actually want to know.
+          </p>
+
+          <p style="margin:0 0 16px;color:#A1A1AA;">
+            I've been building Biotica solo since April 2026. The premise hasn't changed: most serious
+            optimizers are running five or six disconnected apps and holding all the correlations in their
+            head. Biotica is the layer that reads them as one signal. What has changed is how much of that
+            is now real and working.
+          </p>
+
+          <p style="margin:0 0 8px;color:#A1A1AA;">Here's where things stand:</p>
+        </td></tr>
+
+        <!-- screenshots row (PLACEHOLDERS — swap ss-ph divs for <img> when captures exist) -->
+        <tr><td style="padding:4px 24px 8px 24px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="33%" align="center" style="padding:8px;">
+                <img src="https://biotica.app/email/dashboard.jpg" alt="Biotica dashboard" width="160" style="width:160px;height:auto;border-radius:14px;border:1px solid #27272A;display:block;margin:0 auto;">
+                <div style="color:#A1A1AA;font-size:12px;font-family:-apple-system,sans-serif;margin-top:8px;">One dashboard, every source</div>
+              </td>
+              <td width="33%" align="center" style="padding:8px;">
+                <img src="https://biotica.app/email/coach.jpg" alt="Biotica AI coach" width="160" style="width:160px;height:auto;border-radius:14px;border:1px solid #27272A;display:block;margin:0 auto;">
+                <div style="color:#A1A1AA;font-size:12px;font-family:-apple-system,sans-serif;margin-top:8px;">A coach that reads your data</div>
+              </td>
+              <td width="33%" align="center" style="padding:8px;">
+                <img src="https://biotica.app/email/workout.jpg" alt="Biotica workout" width="160" style="width:160px;height:auto;border-radius:14px;border:1px solid #27272A;display:block;margin:0 auto;">
+                <div style="color:#A1A1AA;font-size:12px;font-family:-apple-system,sans-serif;margin-top:8px;">Adapts mid-session</div>
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+
+        <tr><td style="padding:8px 32px 8px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#A1A1AA;font-size:15px;line-height:1.6;">
+          <p style="margin:0 0 16px;color:#A1A1AA;">
+            The app reads your Oura Ring, Withings scale, and Android Health Connect as a single source,
+            with the dashboard showing which device each metric came from and flagging when two sources
+            disagree. Apple Health is coming with the iOS launch. The AI coach already answers training
+            questions grounded in your actual biometric data, writes workout programs tailored to your goal
+            and equipment, gives Elite members per-set coaching notes during a session, and generates weekly
+            insight briefs. There's mid-workout exercise swap when a machine is taken, photo-based body
+            composition commentary, and supplement tracking with inventory and reminders. That's what's
+            live today.
+          </p>
+
+          <p style="margin:0 0 16px;color:#A1A1AA;">
+            Given that you're still on the list, I plan to keep sending occasional updates as the app gets
+            closer to launch. Nothing high-volume, just the things worth knowing.
+          </p>
+
+          <p style="margin:0 0 20px;color:#A1A1AA;">
+            If you'd rather not hear from me until launch, or at all, just
+            <a href="{{unsubscribe_url}}" style="color:#4ADE80;text-decoration:underline;">unsubscribe here</a>
+            and I'll take you off the list immediately, no questions. No action needed to stay on.
+          </p>
+
+          <p style="margin:0 0 4px;color:#FAFAFA;font-weight:600;">Chris</p>
+          <p style="margin:0 0 8px;color:#A1A1AA;font-size:13px;">Founder, Biotica</p>
+        </td></tr>
+
+      </table>
+
+      <!-- footer -->
+      <p style="max-width:560px;margin:16px auto 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#71717A;font-size:11px;line-height:1.5;text-align:center;">
+        You're receiving this because you joined the Biotica waitlist at biotica.app.
+        <a href="{{unsubscribe_url}}" style="color:#71717A;text-decoration:underline;">Unsubscribe</a>.<br>
+        Biotica LLC &middot; 82 Wendell Ave, Ste 100, Pittsfield, MA 01201
+      </p>
+
+    </td></tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+Hi {{first_name}},
+
+When you joined the Biotica waitlist, the signup form mentioned you'd hear from us at launch. That's still the plan, and launch is coming this summer, but I wanted to reach out before then because a lot has been built since you first signed up and I thought you'd actually want to know.
+
+I've been building Biotica solo since April 2026. The premise hasn't changed: most serious optimizers are running five or six disconnected apps and holding all the correlations in their head. Biotica is the layer that reads them as one signal. What has changed is how much of that is now real and working.
+
+Here's where things stand. The app reads your Oura Ring, Withings scale, and Android Health Connect as a single source, with the dashboard showing which device each metric came from and flagging when two sources disagree. Apple Health is coming with the iOS launch. The AI coach already answers training questions grounded in your actual biometric data, writes workout programs tailored to your goal and equipment, gives Elite members per-set coaching notes during a session, and generates weekly insight briefs. There's mid-workout exercise swap when a machine is taken, photo-based body composition commentary, and supplement tracking with inventory and reminders. That's what's live today.
+
+Given that you're still on the list, I plan to keep sending occasional updates as the app gets closer to launch. Nothing high-volume, just the things worth knowing.
+
+If you'd rather not hear from me until launch, or at all, just open this link and I'll take you off the list immediately, no questions: {{unsubscribe_url}}. No action needed to stay on.
+
+Chris
+Founder, Biotica
+
+---
+You're receiving this because you joined the Biotica waitlist at biotica.app.
+Unsubscribe: {{unsubscribe_url}}
+Biotica LLC, 82 Wendell Ave, Ste 100, Pittsfield, MA 01201
