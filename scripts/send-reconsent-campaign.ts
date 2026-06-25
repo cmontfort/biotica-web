@@ -65,6 +65,50 @@ async function main(): Promise<void> {
   const args = new Set(process.argv.slice(2));
   const doSend = args.has('--send');
 
+  // --test <email>: send ONE rendered email to a single address, then exit. Does
+  // NOT touch the waitlist. Uses Resend's onboarding@resend.dev sender by default,
+  // which works BEFORE the biotica.app domain is verified (set RESEND_TEST_FROM to
+  // send from the real address once the domain is verified).
+  const argv = process.argv.slice(2);
+  const testIdx = argv.indexOf('--test');
+  const testArg = testIdx >= 0 ? argv[testIdx + 1] : undefined;
+  // Treat a missing arg, or the next token being another flag, as "no email".
+  const testEmail = testArg && !testArg.startsWith('--') ? testArg : undefined;
+  if (testIdx >= 0 && !testEmail) {
+    console.error('[campaign] --test requires an email address, e.g. --test you@example.com. Aborting.');
+    process.exit(1);
+  }
+  if (testEmail) {
+    if (!process.env.RESEND_API_KEY) {
+      console.error('[campaign] RESEND_API_KEY not set — cannot send a test. Aborting.');
+      process.exit(1);
+    }
+    const betaUrl = process.env.BETA_OPTIN_URL || 'https://play.google.com/PLACEHOLDER-set-BETA_OPTIN_URL';
+    const testFrom = process.env.RESEND_TEST_FROM || 'Biotica <onboarding@resend.dev>';
+    const vars = { first_name: 'Chris', unsubscribe_url: `${UNSUB_BASE}?token=TEST`, beta_url: betaUrl };
+    const { Resend } = await import('resend');
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    console.log(`Sending ONE test email to ${maskEmail(testEmail)} from "${testFrom}" ...`);
+    const { data: tData, error: tError } = await resend.emails.send({
+      from: testFrom,
+      to: testEmail,
+      replyTo: REPLY_TO,
+      subject: `[TEST] ${SUBJECT}`,
+      html: render(htmlTemplate, vars),
+      text: render(textTemplate, vars),
+      headers: {
+        'List-Unsubscribe': `<${UNSUB_BASE}?token=TEST>`,
+        'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+      },
+    });
+    if (tError) {
+      console.error('[campaign] test send rejected by Resend:', tError.name, '—', tError.message);
+      process.exit(1);
+    }
+    console.log(`[campaign] test email accepted by Resend. id: ${tData?.id ?? '(none)'}`);
+    return;
+  }
+
   // Imported dynamically so the env loader above runs first.
   const { supabaseServer } = await import('../lib/supabase-server');
 
