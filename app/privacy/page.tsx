@@ -8,7 +8,7 @@ export default function Privacy() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-20 prose prose-invert prose-zinc">
       <h1>Privacy Policy</h1>
-      <p className="text-muted-fg text-sm">Last updated: June 25, 2026</p>
+      <p className="text-muted-fg text-sm">Last updated: June 27, 2026</p>
 
       <p>
         Biotica LLC, a Massachusetts limited liability company (&quot;Biotica,&quot; &quot;we,&quot; &quot;us,&quot; or
@@ -102,7 +102,8 @@ export default function Privacy() {
           <strong>Anthropic (Claude API)</strong> — powers AI coaching features. When you use the AI coach
           (including the coaching Q&amp;A and AI workout programming), we send a prompt to Anthropic&apos;s API
           that includes: your sleep score, HRV, readiness score, resting heart rate, body weight, body fat
-          percentage, lean mass, step count, active calories, supplement names, dosages, adherence records
+          percentage, lean mass, step count, active calories, daily calorie intake and protein intake,
+          supplement names, dosages, adherence records
           (whether each supplement was taken on each due night), and regimen schedule labels, recent workout
           history (exercises, sets, reps, weights), and your coaching question along with recent conversation
           history. Anthropic processes this prompt and returns a response. Anthropic does not use your data
