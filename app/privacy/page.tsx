@@ -8,7 +8,7 @@ export default function Privacy() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-20 prose prose-invert prose-zinc">
       <h1>Privacy Policy</h1>
-      <p className="text-muted-fg text-sm">Last updated: June 27, 2026</p>
+      <p className="text-muted-fg text-sm">Last updated: July 5, 2026</p>
 
       <p>
         Biotica LLC, a Massachusetts limited liability company (&quot;Biotica,&quot; &quot;we,&quot; &quot;us,&quot; or
@@ -109,7 +109,10 @@ export default function Privacy() {
           history. Anthropic processes this prompt and returns a response. Anthropic does not use your data
           to train their models. Per Anthropic&apos;s standard API terms, prompts and responses may be retained
           by Anthropic for up to 30 days for safety monitoring and abuse prevention, after which they are
-          deleted. AI coach outputs are stored in your Biotica account as part of your coaching history. See{' '}
+          deleted. The text of each AI coach output is stored in your Biotica account as part of your
+          coaching history. We also retain a snapshot of the health data used to generate each coaching
+          output (such as your readiness, sleep, and biometric values at the time of the response) for up
+          to 90 days, so that we can review and improve the quality of AI coaching over time. See{' '}
           <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer">Anthropic Privacy Policy</a>.
         </li>
       </ul>
