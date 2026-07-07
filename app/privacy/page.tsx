@@ -11,7 +11,7 @@ export default function Privacy() {
       <p className="text-muted-fg text-sm">Last updated: July 5, 2026</p>
 
       <p>
-        Biotica LLC, a Massachusetts limited liability company (&quot;Biotica,&quot; &quot;we,&quot; &quot;us,&quot; or
+        Biotica LLC, a Massachusetts limited liability company (&quot;Biotica&trade;,&quot; &quot;we,&quot; &quot;us,&quot; or
         &quot;our&quot;), is committed to protecting your privacy. This Privacy Policy explains what
         information we collect, how we use it, and your choices. By using Biotica, you agree to this
         policy.
