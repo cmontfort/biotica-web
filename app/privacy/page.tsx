@@ -8,7 +8,7 @@ export default function Privacy() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-20 prose prose-invert prose-zinc">
       <h1>Privacy Policy</h1>
-      <p className="text-muted-fg text-sm">Last updated: July 5, 2026</p>
+      <p className="text-muted-fg text-sm">Last updated: July 24, 2026</p>
 
       <p>
         Biotica LLC, a Massachusetts limited liability company (&quot;Biotica&trade;,&quot; &quot;we,&quot; &quot;us,&quot; or
@@ -30,10 +30,11 @@ export default function Privacy() {
       <ul>
         <li><strong>Sleep data</strong> — sleep score, HRV, readiness score, resting heart rate, sleep stages (from Oura Ring)</li>
         <li><strong>Body composition</strong> — weight, body fat percentage, muscle mass, hydration (from Withings)</li>
-        <li><strong>Activity data (Android Health Connect)</strong> — steps, active calories from Android Health Connect</li>
-        <li><strong>Apple Health data (iOS)</strong> — workouts and activity energy from Apple Health, and any data other apps (such as Whoop, Garmin, Peloton, or Strava) have written to Apple Health on your device. Apple Health is an aggregator: connecting it shares with Biotica data that those third-party apps wrote to Apple Health directly, even though Biotica has no direct relationship with those apps. Biotica reads from Apple Health only and never writes back to it.</li>
+        <li><strong>Android Health Connect data</strong> — steps and active calories, nutrition (calories, protein, carbs, fat, and fiber), and workouts (type and duration) from Health Connect, and any data other apps (such as Whoop, Garmin Connect, Peloton, Strava, or MyFitnessPal) have written to Health Connect on your device. Health Connect is an aggregator: connecting it shares with Biotica data that those third-party apps wrote to Health Connect directly, even though Biotica has no direct relationship with those apps. Biotica reads from Health Connect only and never writes back to it.</li>
+        <li><strong>Apple Health data (iOS)</strong> — workouts (including distance and calories burned) and nutrition (calories, protein, carbs, fat, and fiber) from Apple Health, and any data other apps (such as Whoop, Garmin, Peloton, or Strava) have written to Apple Health on your device. Apple Health is an aggregator: connecting it shares with Biotica data that those third-party apps wrote to Apple Health directly, even though Biotica has no direct relationship with those apps. Biotica reads from Apple Health only and never writes back to it.</li>
         <li><strong>Workout data</strong> — exercises, sets, reps, weights logged within the App</li>
         <li><strong>Supplement data</strong> — supplement names, dosages, frequency, timing schedules, and per-dose adherence records you log manually, as well as on-hand inventory quantities, reorder thresholds, and stock-tracking records if you use the supplement inventory feature</li>
+        <li><strong>Progress photos</strong> — photos you upload to track your visual progress over time (front, side, and back angles). These are stored privately in your account and are never shared with other users.</li>
       </ul>
 
       <h3>Usage Data</h3>
@@ -61,6 +62,7 @@ export default function Privacy() {
         <li>Provide and operate the Biotica service, including syncing your biometric data</li>
         <li>Generate personalized AI-powered workout programs and performance insights</li>
         <li>Provide AI coaching responses — your biometric data is included in prompts sent to Anthropic&apos;s API. See Section 3 for detail on what is sent.</li>
+        <li>Provide AI-powered visual analysis of your progress photos, for Pro and Elite subscribers — your selected photos and supporting biometric context are included in prompts sent to Anthropic&apos;s API. This requires a separate consent from general AI coaching, and nothing is sent until you agree. See Section 3 for detail on what is sent.</li>
         <li>Track your supplement protocol and correlate it with your biometric trends</li>
         <li>Send transactional emails (account verification, password reset, account activity notifications)</li>
         <li>Send product-update emails — launch announcements and occasional updates about new features, integrations, and improvements. We send these only with your consent, and you can unsubscribe at any time from any email we send. See the Communications section below.</li>
@@ -91,8 +93,8 @@ export default function Privacy() {
       <ul>
         <li><strong>Oura Ring</strong> — sleep, HRV, and readiness data via Oura Cloud API. Governed by <a href="https://ouraring.com/privacy-policy" target="_blank" rel="noopener noreferrer">Oura&apos;s Privacy Policy</a>.</li>
         <li><strong>Withings</strong> — body composition data via Withings Health API. Governed by <a href="https://www.withings.com/us/en/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Withings&apos; Privacy Policy</a>.</li>
-        <li><strong>Android Health Connect</strong> — steps and activity data from Android Health Connect. When you connect Health Connect, this data is synced to Biotica&apos;s servers. Biotica does not send any of your data to Google.</li>
-        <li><strong>Apple Health (iOS)</strong> — workouts, activity energy, and, in future updates, additional health categories (sleep, heart metrics, body composition) from Apple Health via Apple HealthKit. Apple Health is an aggregator: it may contain data written by other apps on your device. When you connect Apple Health, Biotica reads whatever data you authorize; it does not write back to Apple Health. Governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple&apos;s Privacy Policy</a>.</li>
+        <li><strong>Android Health Connect</strong> — steps, active calories, nutrition, and workout data from Android Health Connect. Health Connect is an aggregator: it may contain data written by other apps on your device, such as Whoop, Garmin Connect, Peloton, Strava, or MyFitnessPal. When you connect Health Connect, Biotica reads whatever data you authorize and syncs it to Biotica&apos;s servers; it does not write back to Health Connect, and Biotica does not send any of your data to Google. Governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google&apos;s Privacy Policy</a>.</li>
+        <li><strong>Apple Health (iOS)</strong> — workouts and nutrition data from Apple Health via Apple HealthKit, and, in future updates, additional health categories (sleep, heart metrics, body composition). Apple Health is an aggregator: it may contain data written by other apps on your device, such as Whoop, Garmin, Peloton, or Strava. When you connect Apple Health, Biotica reads whatever data you authorize; it does not write back to Apple Health. Governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple&apos;s Privacy Policy</a>.</li>
       </ul>
       <p>We also use the following infrastructure providers:</p>
       <ul>
@@ -114,6 +116,25 @@ export default function Privacy() {
           output (such as your readiness, sleep, and biometric values at the time of the response) for up
           to 90 days, so that we can review and improve the quality of AI coaching over time. See{' '}
           <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer">Anthropic Privacy Policy</a>.
+          <br /><br />
+          <strong>Photo AI coaching (Pro and Elite).</strong> If you use the photo analysis feature,
+          we additionally send to Anthropic: the progress photos you select for that analysis; your
+          weight, body fat percentage, and muscle mass from the last 28 days, if logged; your average
+          daily steps and step goal from recent weeks, if available; your goal, training phase, and
+          height; and, if you ask the coach a question about your photos (Elite only), that question.
+          This feature requires a separate, explicit consent from general AI coaching, shown before your
+          first photo analysis, and nothing is sent until you agree. As with AI coaching text responses,
+          Anthropic does not train its models on this data, and photos and accompanying data may be
+          retained by Anthropic for up to 30 days for safety monitoring and abuse prevention, after which
+          they are deleted; we cannot retrieve or delete them from Anthropic during that window. A short
+          summary of what a photo analysis found may be retained in your Biotica account for up to 150
+          days so the coach can refer back to it in other conversations, and the analysis text itself may
+          be cached in your account for the life of your account so a comparison you&apos;ve already viewed
+          can be shown again without re-analyzing your photos. Turning off photo AI consent stops new
+          summaries or cached comparisons from being created going forward; it does not delete or undo
+          anything already generated from earlier photos. The photo AI coach describes what it observes
+          in your photos; it does not diagnose, estimate medical values, or replace professional medical
+          advice.
         </li>
       </ul>
 
@@ -172,6 +193,7 @@ export default function Privacy() {
         <li><strong>Correct</strong> inaccurate data through the App settings</li>
         <li><strong>Delete</strong> your account and all associated data (Settings → Delete Account)</li>
         <li><strong>Disconnect</strong> third-party integrations at any time (Settings → Connected Integrations)</li>
+        <li><strong>Manage AI consent</strong> — AI coaching and photo AI coaching are controlled independently in Settings; declining or revoking either stops that feature&apos;s data from being sent going forward</li>
         <li><strong>Opt out</strong> of non-essential communications by updating notification preferences in the App, or unsubscribe from marketing and product-update emails at any time using the unsubscribe link in any email we send or by contacting <a href="mailto:privacy@biotica.app">privacy@biotica.app</a></li>
       </ul>
       <p>
